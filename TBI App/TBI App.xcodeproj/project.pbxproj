@@ -7,116 +7,164 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A9C60A381C4E52DD002E7B92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C60A371C4E52DD002E7B92 /* main.m */; };
-		A9C60A3B1C4E52DD002E7B92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C60A3A1C4E52DD002E7B92 /* AppDelegate.m */; };
-		A9C60A3E1C4E52DD002E7B92 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C60A3D1C4E52DD002E7B92 /* ViewController.m */; };
-		A9C60A411C4E52DD002E7B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C60A3F1C4E52DD002E7B92 /* Main.storyboard */; };
-		A9C60A441C4E52DD002E7B92 /* TBI_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9C60A421C4E52DD002E7B92 /* TBI_App.xcdatamodeld */; };
-		A9C60A461C4E52DD002E7B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C60A451C4E52DD002E7B92 /* Assets.xcassets */; };
-		A9C60A491C4E52DD002E7B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C60A471C4E52DD002E7B92 /* LaunchScreen.storyboard */; };
+		A957599E1C566B93005634A1 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */; };
+		A957599F1C566B93005634A1 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A95759A41C56826F005634A1 /* ImageQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95759A31C56826F005634A1 /* ImageQuestionViewController.swift */; };
+		A95759A61C568B3D005634A1 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95759A51C568B3D005634A1 /* QuestionViewController.swift */; };
+		A95C1BE81C4ECFB30063CED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C1BE71C4ECFB30063CED5 /* AppDelegate.swift */; };
+		A95C1BEA1C4ECFB30063CED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95C1BE91C4ECFB30063CED5 /* ViewController.swift */; };
+		A95C1BED1C4ECFB30063CED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BEB1C4ECFB30063CED5 /* Main.storyboard */; };
+		A95C1BF01C4ECFB30063CED5 /* TBI_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A95C1BEE1C4ECFB30063CED5 /* TBI_App.xcdatamodeld */; };
+		A95C1BF21C4ECFB30063CED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BF11C4ECFB30063CED5 /* Assets.xcassets */; };
+		A95C1BF51C4ECFB30063CED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BF31C4ECFB30063CED5 /* LaunchScreen.storyboard */; };
+		A95C1C071C4EDA810063CED5 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A95759A01C566B93005634A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		A95C1C031C4ED9F80063CED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		A95C1C051C4ED9F80063CED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A95759A21C566B93005634A1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A957599F1C566B93005634A1 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		A9C60A331C4E52DD002E7B92 /* TBI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9C60A371C4E52DD002E7B92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A9C60A391C4E52DD002E7B92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		A9C60A3A1C4E52DD002E7B92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9C60A3C1C4E52DD002E7B92 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9C60A3D1C4E52DD002E7B92 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A9C60A401C4E52DD002E7B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A9C60A431C4E52DD002E7B92 /* TBI_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TBI_App.xcdatamodel; sourceTree = "<group>"; };
-		A9C60A451C4E52DD002E7B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9C60A481C4E52DD002E7B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A9C60A4A1C4E52DD002E7B92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95759A31C56826F005634A1 /* ImageQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageQuestionViewController.swift; sourceTree = "<group>"; };
+		A95759A51C568B3D005634A1 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		A95C1BE41C4ECFB30063CED5 /* TBI App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBI App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95C1BE71C4ECFB30063CED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A95C1BE91C4ECFB30063CED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A95C1BEC1C4ECFB30063CED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A95C1BEF1C4ECFB30063CED5 /* TBI_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TBI_App.xcdatamodel; sourceTree = "<group>"; };
+		A95C1BF11C4ECFB30063CED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A95C1BF41C4ECFB30063CED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A95C1BF61C4ECFB30063CED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A9C60A301C4E52DD002E7B92 /* Frameworks */ = {
+		A95C1BE11C4ECFB30063CED5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A957599E1C566B93005634A1 /* ResearchKit.framework in Frameworks */,
+				A95C1C071C4EDA810063CED5 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A9C60A2A1C4E52DD002E7B92 = {
+		A95C1BDB1C4ECFB30063CED5 = {
 			isa = PBXGroup;
 			children = (
-				A9C60A351C4E52DD002E7B92 /* TBI App */,
-				A9C60A341C4E52DD002E7B92 /* Products */,
+				A95C1BE61C4ECFB30063CED5 /* TBI App */,
+				A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */,
+				A95C1BE51C4ECFB30063CED5 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A9C60A341C4E52DD002E7B92 /* Products */ = {
+		A95C1BE51C4ECFB30063CED5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9C60A331C4E52DD002E7B92 /* TBI App.app */,
+				A95C1BE41C4ECFB30063CED5 /* TBI App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A9C60A351C4E52DD002E7B92 /* TBI App */ = {
+		A95C1BE61C4ECFB30063CED5 /* TBI App */ = {
 			isa = PBXGroup;
 			children = (
-				A9C60A391C4E52DD002E7B92 /* AppDelegate.h */,
-				A9C60A3A1C4E52DD002E7B92 /* AppDelegate.m */,
-				A9C60A3C1C4E52DD002E7B92 /* ViewController.h */,
-				A9C60A3D1C4E52DD002E7B92 /* ViewController.m */,
-				A9C60A3F1C4E52DD002E7B92 /* Main.storyboard */,
-				A9C60A451C4E52DD002E7B92 /* Assets.xcassets */,
-				A9C60A471C4E52DD002E7B92 /* LaunchScreen.storyboard */,
-				A9C60A4A1C4E52DD002E7B92 /* Info.plist */,
-				A9C60A421C4E52DD002E7B92 /* TBI_App.xcdatamodeld */,
-				A9C60A361C4E52DD002E7B92 /* Supporting Files */,
+				A95C1BE71C4ECFB30063CED5 /* AppDelegate.swift */,
+				A95C1BE91C4ECFB30063CED5 /* ViewController.swift */,
+				A95C1BEB1C4ECFB30063CED5 /* Main.storyboard */,
+				A95C1BF11C4ECFB30063CED5 /* Assets.xcassets */,
+				A95C1BF31C4ECFB30063CED5 /* LaunchScreen.storyboard */,
+				A95C1BF61C4ECFB30063CED5 /* Info.plist */,
+				A95C1BEE1C4ECFB30063CED5 /* TBI_App.xcdatamodeld */,
+				A95759A31C56826F005634A1 /* ImageQuestionViewController.swift */,
+				A95759A51C568B3D005634A1 /* QuestionViewController.swift */,
 			);
 			path = "TBI App";
 			sourceTree = "<group>";
 		};
-		A9C60A361C4E52DD002E7B92 /* Supporting Files */ = {
+		A95C1BFE1C4ED9F70063CED5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9C60A371C4E52DD002E7B92 /* main.m */,
+				A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */,
+				A95C1C061C4ED9F80063CED5 /* ResearchKitTests.xctest */,
 			);
-			name = "Supporting Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9C60A321C4E52DD002E7B92 /* TBI App */ = {
+		A95C1BE31C4ECFB30063CED5 /* TBI App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9C60A4D1C4E52DD002E7B92 /* Build configuration list for PBXNativeTarget "TBI App" */;
+			buildConfigurationList = A95C1BF91C4ECFB30063CED5 /* Build configuration list for PBXNativeTarget "TBI App" */;
 			buildPhases = (
-				A9C60A2F1C4E52DD002E7B92 /* Sources */,
-				A9C60A301C4E52DD002E7B92 /* Frameworks */,
-				A9C60A311C4E52DD002E7B92 /* Resources */,
+				A95C1BE01C4ECFB30063CED5 /* Sources */,
+				A95C1BE11C4ECFB30063CED5 /* Frameworks */,
+				A95C1BE21C4ECFB30063CED5 /* Resources */,
+				A95759A21C566B93005634A1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A95759A11C566B93005634A1 /* PBXTargetDependency */,
 			);
 			name = "TBI App";
 			productName = "TBI App";
-			productReference = A9C60A331C4E52DD002E7B92 /* TBI App.app */;
+			productReference = A95C1BE41C4ECFB30063CED5 /* TBI App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A9C60A2B1C4E52DD002E7B92 /* Project object */ = {
+		A95C1BDC1C4ECFB30063CED5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "George McDonnell";
 				TargetAttributes = {
-					A9C60A321C4E52DD002E7B92 = {
+					A95C1BE31C4ECFB30063CED5 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = A9C60A2E1C4E52DD002E7B92 /* Build configuration list for PBXProject "TBI App" */;
+			buildConfigurationList = A95C1BDF1C4ECFB30063CED5 /* Build configuration list for PBXProject "TBI App" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -124,56 +172,88 @@
 				en,
 				Base,
 			);
-			mainGroup = A9C60A2A1C4E52DD002E7B92;
-			productRefGroup = A9C60A341C4E52DD002E7B92 /* Products */;
+			mainGroup = A95C1BDB1C4ECFB30063CED5;
+			productRefGroup = A95C1BE51C4ECFB30063CED5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A95C1BFE1C4ED9F70063CED5 /* Products */;
+					ProjectRef = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
-				A9C60A321C4E52DD002E7B92 /* TBI App */,
+				A95C1BE31C4ECFB30063CED5 /* TBI App */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = A95C1C031C4ED9F80063CED5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A95C1C061C4ED9F80063CED5 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = A95C1C051C4ED9F80063CED5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
-		A9C60A311C4E52DD002E7B92 /* Resources */ = {
+		A95C1BE21C4ECFB30063CED5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C60A491C4E52DD002E7B92 /* LaunchScreen.storyboard in Resources */,
-				A9C60A461C4E52DD002E7B92 /* Assets.xcassets in Resources */,
-				A9C60A411C4E52DD002E7B92 /* Main.storyboard in Resources */,
+				A95C1BF51C4ECFB30063CED5 /* LaunchScreen.storyboard in Resources */,
+				A95C1BF21C4ECFB30063CED5 /* Assets.xcassets in Resources */,
+				A95C1BED1C4ECFB30063CED5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A9C60A2F1C4E52DD002E7B92 /* Sources */ = {
+		A95C1BE01C4ECFB30063CED5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C60A3E1C4E52DD002E7B92 /* ViewController.m in Sources */,
-				A9C60A3B1C4E52DD002E7B92 /* AppDelegate.m in Sources */,
-				A9C60A381C4E52DD002E7B92 /* main.m in Sources */,
-				A9C60A441C4E52DD002E7B92 /* TBI_App.xcdatamodeld in Sources */,
+				A95C1BEA1C4ECFB30063CED5 /* ViewController.swift in Sources */,
+				A95759A61C568B3D005634A1 /* QuestionViewController.swift in Sources */,
+				A95C1BF01C4ECFB30063CED5 /* TBI_App.xcdatamodeld in Sources */,
+				A95759A41C56826F005634A1 /* ImageQuestionViewController.swift in Sources */,
+				A95C1BE81C4ECFB30063CED5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A95759A11C566B93005634A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = A95759A01C566B93005634A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		A9C60A3F1C4E52DD002E7B92 /* Main.storyboard */ = {
+		A95C1BEB1C4ECFB30063CED5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A9C60A401C4E52DD002E7B92 /* Base */,
+				A95C1BEC1C4ECFB30063CED5 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A9C60A471C4E52DD002E7B92 /* LaunchScreen.storyboard */ = {
+		A95C1BF31C4ECFB30063CED5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A9C60A481C4E52DD002E7B92 /* Base */,
+				A95C1BF41C4ECFB30063CED5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -181,7 +261,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A9C60A4B1C4E52DD002E7B92 /* Debug */ = {
+		A95C1BF71C4ECFB30063CED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,10 +301,11 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		A9C60A4C1C4E52DD002E7B92 /* Release */ = {
+		A95C1BF81C4ECFB30063CED5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -261,10 +342,11 @@
 			};
 			name = Release;
 		};
-		A9C60A4E1C4E52DD002E7B92 /* Debug */ = {
+		A95C1BFA1C4ECFB30063CED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "TBI App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.georgemcdonnell.TBI-App";
@@ -272,10 +354,11 @@
 			};
 			name = Debug;
 		};
-		A9C60A4F1C4E52DD002E7B92 /* Release */ = {
+		A95C1BFB1C4ECFB30063CED5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "TBI App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.georgemcdonnell.TBI-App";
@@ -286,37 +369,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9C60A2E1C4E52DD002E7B92 /* Build configuration list for PBXProject "TBI App" */ = {
+		A95C1BDF1C4ECFB30063CED5 /* Build configuration list for PBXProject "TBI App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9C60A4B1C4E52DD002E7B92 /* Debug */,
-				A9C60A4C1C4E52DD002E7B92 /* Release */,
+				A95C1BF71C4ECFB30063CED5 /* Debug */,
+				A95C1BF81C4ECFB30063CED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9C60A4D1C4E52DD002E7B92 /* Build configuration list for PBXNativeTarget "TBI App" */ = {
+		A95C1BF91C4ECFB30063CED5 /* Build configuration list for PBXNativeTarget "TBI App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9C60A4E1C4E52DD002E7B92 /* Debug */,
-				A9C60A4F1C4E52DD002E7B92 /* Release */,
+				A95C1BFA1C4ECFB30063CED5 /* Debug */,
+				A95C1BFB1C4ECFB30063CED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A9C60A421C4E52DD002E7B92 /* TBI_App.xcdatamodeld */ = {
+		A95C1BEE1C4ECFB30063CED5 /* TBI_App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A9C60A431C4E52DD002E7B92 /* TBI_App.xcdatamodel */,
+				A95C1BEF1C4ECFB30063CED5 /* TBI_App.xcdatamodel */,
 			);
-			currentVersion = A9C60A431C4E52DD002E7B92 /* TBI_App.xcdatamodel */;
+			currentVersion = A95C1BEF1C4ECFB30063CED5 /* TBI_App.xcdatamodel */;
 			path = TBI_App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = A9C60A2B1C4E52DD002E7B92 /* Project object */;
+	rootObject = A95C1BDC1C4ECFB30063CED5 /* Project object */;
 }
