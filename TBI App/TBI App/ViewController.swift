@@ -7,76 +7,103 @@
 //
 
 import UIKit
-import ResearchKit
 
-class ViewController: UIViewController, ORKTaskViewControllerDelegate {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func startSurvey(sender: UIButton) {
-        let task = ORKOrderedTask(identifier: "task", steps: [genderStep(), ageStep()])
         
-        let taskViewController = ORKTaskViewController(task: task, taskRunUUID: nil)
-        taskViewController.delegate = self
-        presentViewController(taskViewController, animated: true, completion: nil)
-    }
-
-    func genderStep() -> ORKQuestionStep {
-        let title = "What is your gender?"
-        
-        let textChoiceOneText = NSLocalizedString("Male", comment: "")
-        let textChoiceTwoText = NSLocalizedString("Female", comment: "")
-        
-        // The text to display can be separate from the value coded for each choice:
-        let textChoices = [
-            ORKTextChoice(text: textChoiceOneText, value: "choice_1"),
-            ORKTextChoice(text: textChoiceTwoText, value: "choice_2"),
-        ]
-        
-        let answerFormat = ORKAnswerFormat.choiceAnswerFormatWithStyle(.SingleChoice, textChoices: textChoices)
-        
-        let questionStep = ORKQuestionStep(identifier: String("gender"), title: title, answer: answerFormat)
-        
-        return questionStep
     }
     
-    func ageStep() -> ORKQuestionStep {
-        let title = "What is your age?"
+    
+    func genderQuestion() -> Question {
+        let title = NSLocalizedString("What is your gender?", comment: "")
+        let options = ["option1" : NSLocalizedString("Male", comment: ""), "option2" : NSLocalizedString("Female", comment: "")]
         
-        let ageChoiceOneText = NSLocalizedString("18-24", comment: "")
-        let ageChoiceTwoText = NSLocalizedString("25-34", comment: "")
-        let ageChoiceThreeText = NSLocalizedString("35-44", comment: "")
-        let ageChoiceFourText = NSLocalizedString("45-54", comment: "")
-        let ageChoiceFiveText = NSLocalizedString("55-64", comment: "")
-        let ageChoiceSixText = NSLocalizedString("65+", comment: "")
-        
-        // The text to display can be separate from the value coded for each choice:
-        let textChoices = [
-            ORKTextChoice(text: ageChoiceOneText, value: "choice_1"),
-            ORKTextChoice(text: ageChoiceTwoText, value: "choice_2"),
-            ORKTextChoice(text: ageChoiceThreeText, value: "choice_3"),
-            ORKTextChoice(text: ageChoiceFourText, value: "choice_4"),
-            ORKTextChoice(text: ageChoiceFiveText, value: "choice_5"),
-            ORKTextChoice(text: ageChoiceSixText, value: "choice_6"),
-        ]
-        
-        let answerFormat = ORKAnswerFormat.choiceAnswerFormatWithStyle(.SingleChoice, textChoices: textChoices)
-        
-        let questionStep = ORKQuestionStep(identifier: String("age"), title: title, answer: answerFormat)
-        
-        return questionStep
+        let genderQuestion = Question(type: QuestionType.Gender, title: title, options: options)
+        return genderQuestion
     }
     
-    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
+    
+    func ageQuestion() -> Question {
+        let title = NSLocalizedString("What is your age?", comment: "")
+        let options = ["option1" : "18-24", "option2" : "25-34", "option3" : "35-44", "option4" : "45-54", "option5" : "55-64", "option6" : "65+", ]
         
+        let ageQuestion = Question(type: QuestionType.Age, title: title, options: options)
+        return ageQuestion
+    }
+    
+    func hygieneAOCQuestion() -> Question {
+        let title = NSLocalizedString("Tap on your areas of concern", comment: "")
+        let options = ["option1" : ["image" : "toilet", "caption" : NSLocalizedString("Using a toilet", comment: "")],
+                       "option2" : ["image" : "bathtub", "caption" : NSLocalizedString("Bathing", comment: "")],
+                       "option3" : ["image" : "shower", "caption" : NSLocalizedString("Showering", comment: "")],
+                       "option4" : ["image" : "toothbrush", "caption" : NSLocalizedString("Brushing Teeth", comment: "")]
+        ]
+        
+        let hygieneAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options)
+        return hygieneAOCQuestion
+    }
+    
+    func communicationAOCQuestion() -> Question {
+        let title = NSLocalizedString("Tap on your areas of concern", comment: "")
+        let options = ["option1" : ["image" : "discussion", "caption" : NSLocalizedString("Speech communication", comment: "")],
+            "option2" : ["image" : "phone", "caption" : NSLocalizedString("Phone communication", comment: "")],
+            "option3" : ["image" : "email", "caption" : NSLocalizedString("Email", comment: "")],
+            "option4" : ["image" : "internet", "caption" : NSLocalizedString("Internet Browsing", comment: "")]
+        ]
+        
+        let communicationAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options)
+        return communicationAOCQuestion
+    }
+    
+    func mobilityAOCQuestion() -> Question {
+        let title = NSLocalizedString("Tap on your areas of concern", comment: "")
+        let options = ["option1" : ["image" : "walking", "caption" : NSLocalizedString("Mobility", comment: "")],
+            "option2" : ["image" : "driving", "caption" : NSLocalizedString("Driving", comment: "")],
+            "option3" : ["image" : "bus", "caption" : NSLocalizedString("Bus Travel", comment: "")],
+            "option4" : ["image" : "train", "caption" : NSLocalizedString("Train Travel", comment: "")]
+        ]
+        
+        let mobilityAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options)
+        return mobilityAOCQuestion
+    }
+    
+    func homeLifeAOCQuestion() -> Question {
+        let title = NSLocalizedString("Tap on your areas of concern", comment: "")
+        let options = ["option1" : ["image" : "eating", "caption" : NSLocalizedString("Eating", comment: "")],
+            "option2" : ["image" : "sleeping", "caption" : NSLocalizedString("Sleeping", comment: "")],
+            "option3" : ["image" : "dressing", "caption" : NSLocalizedString("Dressing", comment: "")],
+            "option4" : ["image" : "shopping", "caption" : NSLocalizedString("Shopping", comment: "")]
+        ]
+        
+        let mobilityAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options)
+        return mobilityAOCQuestion
+    }
+    
+    func healthAOCQuestion() -> Question {
+        let title = NSLocalizedString("Tap on your areas of concern", comment: "")
+        let options = ["option1" : ["image" : "love", "caption" : NSLocalizedString("Love", comment: "")],
+            "option2" : ["image" : "sex", "caption" : NSLocalizedString("Sex", comment: "")],
+            "option3" : ["image" : "medical", "caption" : NSLocalizedString("Medication", comment: "")],
+            "option4" : ["image" : "death", "caption" : NSLocalizedString("Death", comment: "")]
+        ]
+        
+        let healthAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options)
+        return healthAOCQuestion
+    }
+    
+    func secondHomeLifeAOCQuestion() -> Question {
+        let title = NSLocalizedString("Tap on your areas of concern", comment: "")
+        let options = ["option1" : ["image" : "family", "caption" : NSLocalizedString("Family", comment: "")],
+            "option2" : ["image" : "home", "caption" : NSLocalizedString("Home", comment: "")],
+            "option3" : ["image" : "money", "caption" : NSLocalizedString("Money", comment: "")],
+            "option4" : ["image" : "pets", "caption" : NSLocalizedString("Pets", comment: "")]
+        ]
+        
+        let homeLifeAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options)
+        return homeLifeAOCQuestion
     }
 }
 

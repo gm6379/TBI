@@ -8,24 +8,9 @@
 
 import UIKit
 
-class QuestionViewController: UIViewController, UIPageViewControllerDataSource {
+class QuestionViewController: UIViewController {
 
-    var pageViewController: UIPageViewController?
-    var pageTitles = [String]?()
+    var question: String?
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let index = viewController as!
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        
-    }
 
 }

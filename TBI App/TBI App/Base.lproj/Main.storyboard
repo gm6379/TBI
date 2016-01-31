@@ -112,7 +112,6 @@
         <!--View Controller-->
         <scene sceneID="dNb-Gf-UBa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hZ6-17-nCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Ji1-pU-uZX" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HSg-b2-Swd"/>
@@ -138,14 +137,15 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZ6-17-nCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1291" y="487"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="KN5-8A-4z0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3mq-RA-sLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="tev-I6-jbR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3mq-RA-sLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2014" y="472"/>
         </scene>
