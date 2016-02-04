@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol QuestionViewControllerDelegate {
+    func didAnswerQuestion()
+}
+
 class QuestionViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
