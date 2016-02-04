@@ -19,7 +19,6 @@
 		A95C1BF01C4ECFB30063CED5 /* TBI_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A95C1BEE1C4ECFB30063CED5 /* TBI_App.xcdatamodeld */; };
 		A95C1BF21C4ECFB30063CED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BF11C4ECFB30063CED5 /* Assets.xcassets */; };
 		A95C1BF51C4ECFB30063CED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BF31C4ECFB30063CED5 /* LaunchScreen.storyboard */; };
-		A95C1C071C4EDA810063CED5 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +81,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A957599E1C566B93005634A1 /* ResearchKit.framework in Frameworks */,
-				A95C1C071C4EDA810063CED5 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
