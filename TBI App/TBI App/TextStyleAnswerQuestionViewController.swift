@@ -23,4 +23,11 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
         }
     }
 
+    
+    @IBAction func answerQuestion(button: UIButton) {
+        let answerText = button.titleLabel?.text
+        let currentSession = SessionManager.sharedManager.currentSession
+        
+        self.delegate?.questionViewController(self, didAnswerQuestion: question!)
+    }
 }

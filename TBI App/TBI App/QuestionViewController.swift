@@ -9,12 +9,12 @@
 import UIKit
 
 protocol QuestionViewControllerDelegate {
-    func didAnswerQuestion()
+    func questionViewController(viewController: QuestionViewController, didAnswerQuestion: Question)
 }
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: StepViewController {
     
-    @IBOutlet var titleLabel: UILabel!
+    var delegate: QuestionViewControllerDelegate?
 
     var question: Question?
     
@@ -25,14 +25,7 @@ class QuestionViewController: UIViewController {
     }
 }
 
-class QuestionViewControllerHelper: NSObject {
-    
-    var storyboard: UIStoryboard?
-    
-    init(storyboard: UIStoryboard) {
-        self.storyboard = storyboard
-        super.init()
-    }
+class QuestionViewControllerFactory: StepViewControllerFactory {
     
     func ageQuestionViewController() -> TextStyleAnswerQuestionViewController {
         let ageQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("AgeQuestionViewController") as! TextStyleAnswerQuestionViewController
@@ -48,6 +41,5 @@ class QuestionViewControllerHelper: NSObject {
         let imageQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("ImageQuestionViewController") as! ImageQuestionViewController
         return imageQuestionViewController
     }
-    
     
 }

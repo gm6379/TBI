@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource {
+class ViewController: UIViewController, UIPageViewControllerDataSource, QuestionViewControllerDelegate, OnBoardingStepViewControllerDelegate {
     
     var pageViewController: UIPageViewController?
     var currentIndex = 0
@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     @IBOutlet weak var backArrow: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     
-    var qVcs = [QuestionViewController]()
+    var sVcs = [StepViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,28 +36,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        currentIndex = qVcs.indexOf(viewController as! QuestionViewController)!
-        
-        if (currentIndex == 0) {
-            return nil;
-        }
-        
-        let previousIndex = abs((currentIndex - 1) % qVcs.count)
-        return qVcs[previousIndex]
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        currentIndex = qVcs.indexOf(viewController as! QuestionViewController)!
-        
-        if (currentIndex == qVcs.count - 1) {
-            return nil;
-        }
-        
-        let nextIndex = abs((currentIndex + 1) % qVcs.count)
-        return qVcs[nextIndex]
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "EmbedPageViewControllerSegue") {
             let helper = QuestionHelper()
@@ -71,37 +49,49 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
                              helper.healthAOCQuestion(),
                              helper.secondHomeLifeAOCQuestion()]
             
-            let vcHelper = QuestionViewControllerHelper(storyboard: storyboard!)
-            qVcs = [vcHelper.genderQuestionViewController(),
-                    vcHelper.ageQuestionViewController(),
-                    vcHelper.imageQuestionViewController(),
-                    vcHelper.imageQuestionViewController(),
-                    vcHelper.imageQuestionViewController(),
-                    vcHelper.imageQuestionViewController(),
-                    vcHelper.imageQuestionViewController(),
-                    vcHelper.imageQuestionViewController()]
+            let osVcFactory = OnBoardingStepViewControllerFactory(storyboard: storyboard!)
+            let oSvcs:[StepViewController] = [osVcFactory.loginViewController()]
+            
+            let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
+            let qVcs: [StepViewController] = [qVcFactory.genderQuestionViewController(),
+                    qVcFactory.ageQuestionViewController(),
+                    qVcFactory.imageQuestionViewController(),
+                    qVcFactory.imageQuestionViewController(),
+                    qVcFactory.imageQuestionViewController(),
+                    qVcFactory.imageQuestionViewController(),
+                    qVcFactory.imageQuestionViewController(),
+                    qVcFactory.imageQuestionViewController()]
             
             for var i = 0; i < questions.count; i++ {
                 let question = questions[i]
-                let qVc = qVcs[i]
+                let qVc = qVcs[i] as! QuestionViewController
                 
                 qVc.question = question
+                qVc.delegate = self
             }
+            
+            for sVc in oSvcs {
+                let vc = sVc as! OnBoardingStepViewController
+                vc.delegate = self
+            }
+            
+            sVcs = [StepViewController]()
+            sVcs += oSvcs
+            sVcs += qVcs
             
             let pageViewController = segue.destinationViewController as! UIPageViewController
             self.pageViewController = pageViewController
             
             self.pageViewController!.dataSource = self;
 
-            self.pageViewController?.setViewControllers([qVcs.first!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            self.pageViewController?.setViewControllers([sVcs.first!], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         }
     }
     
-    
     @IBAction func nextQuestion() {
-        if (currentIndex != qVcs.count - 1) {
-            let nextIndex = abs((currentIndex + 1) % qVcs.count)
-            pageViewController?.setViewControllers([qVcs[nextIndex]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        if (currentIndex != sVcs.count - 1) {
+            let nextIndex = abs((currentIndex + 1) % sVcs.count)
+            pageViewController?.setViewControllers([sVcs[nextIndex]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
             currentIndex = nextIndex
             
             backArrow.hidden = false
@@ -111,8 +101,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     
     @IBAction func previousQuestion() {
         if (currentIndex != 0) {
-            let previousIndex = abs((currentIndex - 1) % qVcs.count)
-            pageViewController?.setViewControllers([qVcs[previousIndex]], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
+            let previousIndex = abs((currentIndex - 1) % sVcs.count)
+            pageViewController?.setViewControllers([sVcs[previousIndex]], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
             currentIndex = previousIndex
             
             if (currentIndex == 0) {
@@ -121,5 +111,43 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
             }
         }
     }
+    
+    // MARK: - UIPageViewControllerDelegate
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        currentIndex = sVcs.indexOf(viewController as! QuestionViewController)!
+        
+        if (currentIndex == 0) {
+            return nil;
+        }
+        
+        let previousIndex = abs((currentIndex - 1) % sVcs.count)
+        return sVcs[previousIndex]
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        currentIndex = sVcs.indexOf(viewController as! QuestionViewController)!
+        
+        if (currentIndex == sVcs.count - 1) {
+            return nil;
+        }
+        
+        let nextIndex = abs((currentIndex + 1) % sVcs.count)
+        return sVcs[nextIndex]
+    }
+    
+    // MARK: - QuestionViewControllerDelgate
+    
+    func questionViewController(viewController: QuestionViewController, didAnswerQuestion: Question) {
+        nextQuestion()
+    }
+    
+    // MARK: - OnBoardingViewControllerDelegate
+    
+    func didCompleteOnBoardingStep() {
+        nextQuestion()
+    }
+
+    
 }
 

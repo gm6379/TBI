@@ -20,6 +20,19 @@
 		A95C1BF01C4ECFB30063CED5 /* TBI_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A95C1BEE1C4ECFB30063CED5 /* TBI_App.xcdatamodeld */; };
 		A95C1BF21C4ECFB30063CED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BF11C4ECFB30063CED5 /* Assets.xcassets */; };
 		A95C1BF51C4ECFB30063CED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95C1BF31C4ECFB30063CED5 /* LaunchScreen.storyboard */; };
+		A96C3C1E1C7358FA000D7184 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C1D1C7358FA000D7184 /* SessionManager.swift */; };
+		A96C3C201C735B67000D7184 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C1F1C735B67000D7184 /* CoreDataManager.swift */; };
+		A96C3C271C736334000D7184 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */; };
+		A96C3C281C736334000D7184 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C221C736334000D7184 /* Session.swift */; };
+		A96C3C291C736334000D7184 /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C231C736334000D7184 /* Answer+CoreDataProperties.swift */; };
+		A96C3C2A1C736334000D7184 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C241C736334000D7184 /* Answer.swift */; };
+		A96C3C2B1C736334000D7184 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C251C736334000D7184 /* User+CoreDataProperties.swift */; };
+		A96C3C2C1C736334000D7184 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C261C736334000D7184 /* User.swift */; };
+		A96C3C2E1C7369E3000D7184 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C2D1C7369E3000D7184 /* Step.swift */; };
+		A96C3C301C736AD3000D7184 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C2F1C736AD3000D7184 /* StepViewController.swift */; };
+		A96C3C321C736D00000D7184 /* OnBoardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C311C736D00000D7184 /* OnBoardingStepViewController.swift */; };
+		A9BD0A561C6B4E9700B1AE59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0A551C6B4E9700B1AE59 /* LoginViewController.swift */; };
+		A9BD0A591C6B5EAA00B1AE59 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0A581C6B5EAA00B1AE59 /* SFHFKeychainUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +88,21 @@
 		A95C1BF41C4ECFB30063CED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A95C1BF61C4ECFB30063CED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		A96C3C1D1C7358FA000D7184 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		A96C3C1F1C735B67000D7184 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A96C3C221C736334000D7184 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A96C3C231C736334000D7184 /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A96C3C241C736334000D7184 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		A96C3C251C736334000D7184 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A96C3C261C736334000D7184 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A96C3C2D1C7369E3000D7184 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		A96C3C2F1C736AD3000D7184 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		A96C3C311C736D00000D7184 /* OnBoardingStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingStepViewController.swift; sourceTree = "<group>"; };
+		A9BD0A511C6B4E6100B1AE59 /* TBI App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TBI App-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9BD0A551C6B4E9700B1AE59 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A9BD0A571C6B5EAA00B1AE59 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		A9BD0A581C6B5EAA00B1AE59 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +137,7 @@
 		A95C1BE61C4ECFB30063CED5 /* TBI App */ = {
 			isa = PBXGroup;
 			children = (
+				A96C3C101C73481D000D7184 /* Model */,
 				A95C1BE71C4ECFB30063CED5 /* AppDelegate.swift */,
 				A95C1BE91C4ECFB30063CED5 /* ViewController.swift */,
 				A95C1BEB1C4ECFB30063CED5 /* Main.storyboard */,
@@ -121,6 +150,13 @@
 				A9569DF11C5E2AA3001F4C3F /* Question.swift */,
 				A95B7BE11C5E6B3B004C8EC3 /* TextStyleAnswerQuestionViewController.swift */,
 				A908FAA41C63A6990092891F /* SelectedConcernsViewController.swift */,
+				A9BD0A4E1C6B4E4200B1AE59 /* Resources */,
+				A9BD0A551C6B4E9700B1AE59 /* LoginViewController.swift */,
+				A96C3C1D1C7358FA000D7184 /* SessionManager.swift */,
+				A96C3C1F1C735B67000D7184 /* CoreDataManager.swift */,
+				A96C3C2D1C7369E3000D7184 /* Step.swift */,
+				A96C3C2F1C736AD3000D7184 /* StepViewController.swift */,
+				A96C3C311C736D00000D7184 /* OnBoardingStepViewController.swift */,
 			);
 			path = "TBI App";
 			sourceTree = "<group>";
@@ -132,6 +168,29 @@
 				A95C1C061C4ED9F80063CED5 /* ResearchKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A96C3C101C73481D000D7184 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */,
+				A96C3C221C736334000D7184 /* Session.swift */,
+				A96C3C231C736334000D7184 /* Answer+CoreDataProperties.swift */,
+				A96C3C241C736334000D7184 /* Answer.swift */,
+				A96C3C251C736334000D7184 /* User+CoreDataProperties.swift */,
+				A96C3C261C736334000D7184 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9BD0A4E1C6B4E4200B1AE59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9BD0A571C6B5EAA00B1AE59 /* SFHFKeychainUtils.h */,
+				A9BD0A581C6B5EAA00B1AE59 /* SFHFKeychainUtils.m */,
+				A9BD0A511C6B4E6100B1AE59 /* TBI App-Bridging-Header.h */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,14 +289,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A96C3C281C736334000D7184 /* Session.swift in Sources */,
 				A95C1BEA1C4ECFB30063CED5 /* ViewController.swift in Sources */,
 				A95759A61C568B3D005634A1 /* QuestionViewController.swift in Sources */,
 				A95C1BF01C4ECFB30063CED5 /* TBI_App.xcdatamodeld in Sources */,
 				A9569DF21C5E2AA3001F4C3F /* Question.swift in Sources */,
+				A96C3C201C735B67000D7184 /* CoreDataManager.swift in Sources */,
 				A95759A41C56826F005634A1 /* ImageQuestionViewController.swift in Sources */,
+				A96C3C2E1C7369E3000D7184 /* Step.swift in Sources */,
+				A96C3C2A1C736334000D7184 /* Answer.swift in Sources */,
 				A95C1BE81C4ECFB30063CED5 /* AppDelegate.swift in Sources */,
+				A96C3C291C736334000D7184 /* Answer+CoreDataProperties.swift in Sources */,
+				A96C3C271C736334000D7184 /* Session+CoreDataProperties.swift in Sources */,
 				A908FAA51C63A6990092891F /* SelectedConcernsViewController.swift in Sources */,
+				A9BD0A561C6B4E9700B1AE59 /* LoginViewController.swift in Sources */,
+				A96C3C2B1C736334000D7184 /* User+CoreDataProperties.swift in Sources */,
+				A96C3C321C736D00000D7184 /* OnBoardingStepViewController.swift in Sources */,
+				A96C3C2C1C736334000D7184 /* User.swift in Sources */,
+				A9BD0A591C6B5EAA00B1AE59 /* SFHFKeychainUtils.m in Sources */,
+				A96C3C301C736AD3000D7184 /* StepViewController.swift in Sources */,
 				A95B7BE21C5E6B3B004C8EC3 /* TextStyleAnswerQuestionViewController.swift in Sources */,
+				A96C3C1E1C7358FA000D7184 /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,11 +428,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "TBI App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.georgemcdonnell.TBI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TBI App/Resources/TBI App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -368,11 +443,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "TBI App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.georgemcdonnell.TBI-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TBI App/Resources/TBI App-Bridging-Header.h";
 			};
 			name = Release;
 		};

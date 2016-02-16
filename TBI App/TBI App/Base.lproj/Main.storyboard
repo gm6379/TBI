@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UyV-Pe-1Uc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ji1-pU-uZX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -58,6 +58,21 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Male"/>
+                                <connections>
+                                    <action selector="answerQuestion:" destination="5gJ-qA-dLy" eventType="touchUpInside" id="GVs-4s-wxi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wB-c8-efw">
+                                <rect key="frame" x="327" y="237" width="134" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="6hL-uW-quh"/>
+                                    <constraint firstAttribute="width" secondItem="1wB-c8-efw" secondAttribute="height" multiplier="134:125" id="LhT-Mf-yQr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Female"/>
+                                <connections>
+                                    <action selector="answerQuestion:" destination="5gJ-qA-dLy" eventType="touchUpInside" id="DPc-m1-8tF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your gender?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ad-A7-ihe">
                                 <rect key="frame" x="20" y="40" width="560" height="34"/>
@@ -68,15 +83,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wB-c8-efw">
-                                <rect key="frame" x="327" y="237" width="134" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="6hL-uW-quh"/>
-                                    <constraint firstAttribute="width" secondItem="1wB-c8-efw" secondAttribute="height" multiplier="134:125" id="LhT-Mf-yQr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal" title="Female"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -210,6 +216,78 @@
             </objects>
             <point key="canvasLocation" x="597" y="1168"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="1cd-8O-vT8">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="o4K-wJ-W9w" customClass="LoginViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mBN-Ac-HwF"/>
+                        <viewControllerLayoutGuide type="bottom" id="NUi-Lt-93m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IAE-pq-QPz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-Yu-Dpv">
+                                <rect key="frame" x="20" y="38" width="560" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMj-4q-bCc">
+                                <rect key="frame" x="20" y="117" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6b-Tk-Ikf">
+                                <rect key="frame" x="20" y="170" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcJ-tr-xGb">
+                                <rect key="frame" x="341" y="225" width="50" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="o4K-wJ-W9w" eventType="touchUpInside" id="gYY-Jy-aQO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZf-vV-Oo7">
+                                <rect key="frame" x="197" y="225" width="74" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="register:" destination="o4K-wJ-W9w" eventType="touchUpInside" id="Fjd-Uw-TGr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0dS-Yu-Dpv" firstAttribute="trailing" secondItem="IAE-pq-QPz" secondAttribute="trailingMargin" id="A8l-Ii-Zg5"/>
+                            <constraint firstItem="EMj-4q-bCc" firstAttribute="top" secondItem="0dS-Yu-Dpv" secondAttribute="bottom" constant="43" id="Cdu-ka-moO"/>
+                            <constraint firstItem="oZf-vV-Oo7" firstAttribute="top" secondItem="z6b-Tk-Ikf" secondAttribute="bottom" constant="25" id="L0d-yK-awO"/>
+                            <constraint firstItem="z6b-Tk-Ikf" firstAttribute="leading" secondItem="EMj-4q-bCc" secondAttribute="leading" id="MjD-eM-YTa"/>
+                            <constraint firstItem="xcJ-tr-xGb" firstAttribute="baseline" secondItem="oZf-vV-Oo7" secondAttribute="baseline" id="NiR-uy-7SJ"/>
+                            <constraint firstItem="0dS-Yu-Dpv" firstAttribute="leading" secondItem="EMj-4q-bCc" secondAttribute="leading" id="Poa-4C-iRl"/>
+                            <constraint firstItem="0dS-Yu-Dpv" firstAttribute="top" secondItem="mBN-Ac-HwF" secondAttribute="bottom" constant="18" id="VcS-fL-o6s"/>
+                            <constraint firstItem="xcJ-tr-xGb" firstAttribute="centerX" secondItem="IAE-pq-QPz" secondAttribute="centerX" constant="66" id="Wuk-Y5-Y7x"/>
+                            <constraint firstItem="EMj-4q-bCc" firstAttribute="leading" secondItem="IAE-pq-QPz" secondAttribute="leadingMargin" id="XKd-7y-2rI"/>
+                            <constraint firstItem="z6b-Tk-Ikf" firstAttribute="trailing" secondItem="EMj-4q-bCc" secondAttribute="trailing" id="a3z-gD-0E9"/>
+                            <constraint firstItem="oZf-vV-Oo7" firstAttribute="centerX" secondItem="z6b-Tk-Ikf" secondAttribute="centerX" constant="-66" id="fPu-9o-1dE"/>
+                            <constraint firstItem="0dS-Yu-Dpv" firstAttribute="trailing" secondItem="EMj-4q-bCc" secondAttribute="trailing" id="qL3-bD-bjq"/>
+                            <constraint firstItem="z6b-Tk-Ikf" firstAttribute="top" secondItem="EMj-4q-bCc" secondAttribute="bottom" constant="23" id="tAb-7j-kgq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="z6b-Tk-Ikf" id="GH7-bN-lBa"/>
+                        <outlet property="titleLabel" destination="0dS-Yu-Dpv" id="KUV-kA-yse"/>
+                        <outlet property="usernameTextField" destination="EMj-4q-bCc" id="Vrb-bd-PXd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpq-lg-Btr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="1856"/>
+        </scene>
         <!--Text Style Answer Question View Controller-->
         <scene sceneID="p2N-E1-W6a">
             <objects>
@@ -244,6 +322,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="CQh-wG-hDx" eventType="touchUpInside" id="kAj-pA-ejI"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvN-QX-AYe">
                                                 <rect key="frame" x="285" y="0.0" width="235" height="145"/>
@@ -252,6 +333,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="185" y="0.0" width="135" height="105"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="CQh-wG-hDx" eventType="touchUpInside" id="P9u-lY-dRz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <variation key="widthClass=compact" misplaced="YES">
@@ -268,6 +352,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="106"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="CQh-wG-hDx" eventType="touchUpInside" id="AV3-Yj-aJe"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQq-wD-Ty7">
                                                 <rect key="frame" x="285" y="0.0" width="235" height="146"/>
@@ -276,6 +363,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="185" y="0.0" width="135" height="106"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="CQh-wG-hDx" eventType="touchUpInside" id="zQZ-Q0-CKp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <variation key="widthClass=compact" misplaced="YES">
@@ -292,6 +382,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="CQh-wG-hDx" eventType="touchUpInside" id="vOJ-lV-Ijg"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-Jh-SbC">
                                                 <rect key="frame" x="285" y="0.0" width="235" height="145"/>
@@ -300,6 +393,9 @@
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="185" y="0.0" width="135" height="105"/>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="CQh-wG-hDx" eventType="touchUpInside" id="OWf-Je-K8V"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <variation key="widthClass=compact" misplaced="YES">
@@ -497,7 +593,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="02y-sk-zNl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your top 3 areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="02y-sk-zNl">
                                 <rect key="frame" x="20" y="40" width="560" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Mls-zm-ubl"/>
