@@ -24,13 +24,13 @@
 		A96C3C201C735B67000D7184 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C1F1C735B67000D7184 /* CoreDataManager.swift */; };
 		A96C3C271C736334000D7184 /* Session+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */; };
 		A96C3C281C736334000D7184 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C221C736334000D7184 /* Session.swift */; };
-		A96C3C291C736334000D7184 /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C231C736334000D7184 /* Answer+CoreDataProperties.swift */; };
-		A96C3C2A1C736334000D7184 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C241C736334000D7184 /* Answer.swift */; };
 		A96C3C2B1C736334000D7184 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C251C736334000D7184 /* User+CoreDataProperties.swift */; };
 		A96C3C2C1C736334000D7184 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C261C736334000D7184 /* User.swift */; };
 		A96C3C2E1C7369E3000D7184 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C2D1C7369E3000D7184 /* Step.swift */; };
 		A96C3C301C736AD3000D7184 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C2F1C736AD3000D7184 /* StepViewController.swift */; };
 		A96C3C321C736D00000D7184 /* OnBoardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C311C736D00000D7184 /* OnBoardingStepViewController.swift */; };
+		A96C3C351C73958B000D7184 /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C331C73958B000D7184 /* Answer+CoreDataProperties.swift */; };
+		A96C3C361C73958B000D7184 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C3C341C73958B000D7184 /* Answer.swift */; };
 		A9BD0A561C6B4E9700B1AE59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0A551C6B4E9700B1AE59 /* LoginViewController.swift */; };
 		A9BD0A591C6B5EAA00B1AE59 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0A581C6B5EAA00B1AE59 /* SFHFKeychainUtils.m */; };
 /* End PBXBuildFile section */
@@ -92,13 +92,13 @@
 		A96C3C1F1C735B67000D7184 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A96C3C221C736334000D7184 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		A96C3C231C736334000D7184 /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A96C3C241C736334000D7184 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		A96C3C251C736334000D7184 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A96C3C261C736334000D7184 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A96C3C2D1C7369E3000D7184 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		A96C3C2F1C736AD3000D7184 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
 		A96C3C311C736D00000D7184 /* OnBoardingStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingStepViewController.swift; sourceTree = "<group>"; };
+		A96C3C331C73958B000D7184 /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A96C3C341C73958B000D7184 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		A9BD0A511C6B4E6100B1AE59 /* TBI App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TBI App-Bridging-Header.h"; sourceTree = "<group>"; };
 		A9BD0A551C6B4E9700B1AE59 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A9BD0A571C6B5EAA00B1AE59 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
@@ -173,10 +173,10 @@
 		A96C3C101C73481D000D7184 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A96C3C331C73958B000D7184 /* Answer+CoreDataProperties.swift */,
+				A96C3C341C73958B000D7184 /* Answer.swift */,
 				A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */,
 				A96C3C221C736334000D7184 /* Session.swift */,
-				A96C3C231C736334000D7184 /* Answer+CoreDataProperties.swift */,
-				A96C3C241C736334000D7184 /* Answer.swift */,
 				A96C3C251C736334000D7184 /* User+CoreDataProperties.swift */,
 				A96C3C261C736334000D7184 /* User.swift */,
 			);
@@ -292,18 +292,18 @@
 				A96C3C281C736334000D7184 /* Session.swift in Sources */,
 				A95C1BEA1C4ECFB30063CED5 /* ViewController.swift in Sources */,
 				A95759A61C568B3D005634A1 /* QuestionViewController.swift in Sources */,
+				A96C3C361C73958B000D7184 /* Answer.swift in Sources */,
 				A95C1BF01C4ECFB30063CED5 /* TBI_App.xcdatamodeld in Sources */,
 				A9569DF21C5E2AA3001F4C3F /* Question.swift in Sources */,
 				A96C3C201C735B67000D7184 /* CoreDataManager.swift in Sources */,
 				A95759A41C56826F005634A1 /* ImageQuestionViewController.swift in Sources */,
 				A96C3C2E1C7369E3000D7184 /* Step.swift in Sources */,
-				A96C3C2A1C736334000D7184 /* Answer.swift in Sources */,
 				A95C1BE81C4ECFB30063CED5 /* AppDelegate.swift in Sources */,
-				A96C3C291C736334000D7184 /* Answer+CoreDataProperties.swift in Sources */,
 				A96C3C271C736334000D7184 /* Session+CoreDataProperties.swift in Sources */,
 				A908FAA51C63A6990092891F /* SelectedConcernsViewController.swift in Sources */,
 				A9BD0A561C6B4E9700B1AE59 /* LoginViewController.swift in Sources */,
 				A96C3C2B1C736334000D7184 /* User+CoreDataProperties.swift in Sources */,
+				A96C3C351C73958B000D7184 /* Answer+CoreDataProperties.swift in Sources */,
 				A96C3C321C736D00000D7184 /* OnBoardingStepViewController.swift in Sources */,
 				A96C3C2C1C736334000D7184 /* User.swift in Sources */,
 				A9BD0A591C6B5EAA00B1AE59 /* SFHFKeychainUtils.m in Sources */,

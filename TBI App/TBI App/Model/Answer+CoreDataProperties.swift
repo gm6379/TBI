@@ -15,6 +15,7 @@ import CoreData
 extension Answer {
 
     @NSManaged var data: NSData?
+    @NSManaged var dateCreated: NSDate?
     @NSManaged var session: Session?
 
 }

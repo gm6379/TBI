@@ -29,4 +29,6 @@ class ImageQuestionViewController: QuestionViewController {
             imageView.image = UIImage(named: imageName)
         }
     }
+    
+    
 }

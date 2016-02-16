@@ -22,11 +22,12 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
             button.setTitle(option, forState: UIControlState.Normal)
         }
     }
-
     
     @IBAction func answerQuestion(button: UIButton) {
         let answerText = button.titleLabel?.text
         let currentSession = SessionManager.sharedManager.currentSession
+        
+        CoreDataManager.createAnswerWithSession(currentSession!, answerDictionary: ["questionType" : question!.readableType(), "answerText" : answerText!])
         
         self.delegate?.questionViewController(self, didAnswerQuestion: question!)
     }

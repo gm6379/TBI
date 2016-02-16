@@ -41,6 +41,7 @@ class CoreDataManager: NSObject {
         
         let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(answerDictionary)
         answer.data = data
+        answer.dateCreated = NSDate()
         
         appDelegate.saveContext()
     }

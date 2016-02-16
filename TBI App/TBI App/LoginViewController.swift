@@ -51,26 +51,29 @@ class LoginViewController: OnBoardingStepViewController {
         if (usernameTextField.text == "" || passwordTextField.text == "") {
             displayEmptyFieldError()
         } else {
-            let appName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as? String
-            do {
-                let password = try SFHFKeychainUtils.getPasswordForUsername(usernameTextField.text, andServiceName: appName)
-                if (passwordTextField.text == password) { // password is correct
-                    // lookup user in core data
-                    let user = CoreDataManager.fetchUserWithUsername(usernameTextField.text!)
-                    if (user != nil) {
-                        // start a new session for the user
-                        let session = CoreDataManager.createSessionWithUser(user!)
-                        
-                        SessionManager.sharedManager.currentSession = session
-                        
-                        self.delegate?.didCompleteOnBoardingStep()
+            // lookup user in core data
+            let user = CoreDataManager.fetchUserWithUsername(usernameTextField.text!)
+            if (user != nil) {
+                // start a new session for the user
+                let session = CoreDataManager.createSessionWithUser(user!)
+                
+                SessionManager.sharedManager.currentSession = session
+                
+                self.delegate?.didCompleteOnBoardingStep()
+                
+                let appName = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as? String
+                do {
+                    let password = try SFHFKeychainUtils.getPasswordForUsername(usernameTextField.text, andServiceName: appName)
+                    if (passwordTextField.text == password) { // password is correct
+                    } else { // password is incorrect
+                        displayIncorrectPasswordError()
                     }
-                } else { // password is incorrect
-                    displayIncorrectPasswordError()
+                } catch { // user doesn't exist
+                    displayIncorrectUsernameError()
+                    print(error)
                 }
-            } catch { // user doesn't exist
+            } else { // user doesn't exist
                 displayIncorrectUsernameError()
-                print(error)
             }
         }
     }

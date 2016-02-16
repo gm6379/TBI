@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Automatic">
     <entity name="Answer" representedClassName=".Answer" syncable="YES">
         <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="session" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="answers" inverseEntity="Session" syncable="YES"/>
     </entity>
     <entity name="Session" representedClassName=".Session" syncable="YES">
@@ -15,7 +16,7 @@
         <relationship name="sessions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Session" inverseName="user" inverseEntity="Session" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Answer" positionX="297" positionY="63" width="128" height="73"/>
+        <element name="Answer" positionX="297" positionY="63" width="128" height="88"/>
         <element name="Session" positionX="97" positionY="41" width="128" height="103"/>
         <element name="User" positionX="-137" positionY="63" width="128" height="73"/>
     </elements>

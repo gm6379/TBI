@@ -24,6 +24,17 @@ class Question: Step {
         self.multipleChoice = multipleChoice
         super.init(title: title)
     }
+    
+    func readableType() -> String {
+        switch type! {
+        case .Gender:
+            return "Gender"
+        case .Age:
+            return "Age"
+        case .AreaOfConcern:
+            return "AreaOfConcern"
+        }
+    }
 }
 
 class QuestionHelper: NSObject {
