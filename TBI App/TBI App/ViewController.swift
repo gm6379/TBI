@@ -91,9 +91,16 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     @IBAction func nextQuestion() {
         if (currentIndex != sVcs.count - 1) {
             let nextIndex = abs((currentIndex + 1) % sVcs.count)
-            pageViewController?.setViewControllers([sVcs[nextIndex]], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+            let nextStepVC = sVcs[nextIndex]
+            pageViewController?.setViewControllers([nextStepVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
             currentIndex = nextIndex
-            
+            if (nextStepVC.isKindOfClass(QuestionViewController)) {
+                if ((nextStepVC as! QuestionViewController).question?.multipleChoice == true) {
+                    nextButton.hidden = false
+                } else {
+                    nextButton.hidden = true
+                }
+            }
             backArrow.hidden = false
             backButton.enabled = true
         }
@@ -102,8 +109,17 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     @IBAction func previousQuestion() {
         if (currentIndex != 0) {
             let previousIndex = abs((currentIndex - 1) % sVcs.count)
-            pageViewController?.setViewControllers([sVcs[previousIndex]], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
+            let prevStepVC = sVcs[previousIndex]
+
+            pageViewController?.setViewControllers([prevStepVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
             currentIndex = previousIndex
+            if (prevStepVC.isKindOfClass(QuestionViewController)) {
+                if ((prevStepVC as! QuestionViewController).question?.multipleChoice == true) {
+                    nextButton.hidden = false
+                } else {
+                    nextButton.hidden = true
+                }
+            }
             
             if (currentIndex == 0) {
                 backArrow.hidden = true

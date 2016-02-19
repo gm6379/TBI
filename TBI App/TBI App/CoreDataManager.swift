@@ -34,15 +34,29 @@ class CoreDataManager: NSObject {
         return session
     }
     
-    class func createAnswerWithSession(session: Session, answerDictionary: Dictionary<String, String>) {
+    class func createAnswer(questionType: String, answerDictionary: Dictionary<String, String>) {
+        let sessionId = SessionManager.sharedManager.currentSession?.objectID
+        let identifier: String = (sessionId?.description)! + questionType
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let answer = NSEntityDescription.insertNewObjectForEntityForName("Answer", inManagedObjectContext: appDelegate.managedObjectContext) as! Answer
-        answer.session = session
-        
+        answer.identifier = identifier
+        answer.session = SessionManager.sharedManager.currentSession
+
         let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(answerDictionary)
         answer.data = data
         answer.dateCreated = NSDate()
         
+        appDelegate.saveContext()
+    }
+    
+    // MARK: - Update methods
+    
+    class func updateAnswer(answer: Answer, withAnswerDictionary answerDictionary: Dictionary<String, String>) {
+        let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(answerDictionary)
+        answer.data = data
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.saveContext()
     }
     
@@ -64,6 +78,28 @@ class CoreDataManager: NSObject {
             print(error)
         }
 
+        return nil
+    }
+    
+    class func fetchAnswerFromQuestionType(questionType: String) -> Answer? {
+        let sessionId = SessionManager.sharedManager.currentSession?.objectID
+        let identifier: String = (sessionId?.description)! + questionType
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let request = NSFetchRequest(entityName: "Answer")
+        request.predicate = NSPredicate(format: "identifier == %@", identifier)
+        
+        do {
+            let results = try appDelegate.managedObjectContext.executeFetchRequest(request)
+            if (results.count != 0) {
+                return results.first! as? Answer
+            } else {
+                return nil
+            }
+        } catch {
+            print(error)
+        }
+        
         return nil
     }
 

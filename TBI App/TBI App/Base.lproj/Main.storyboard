@@ -7,37 +7,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLJ-jb-8cB">
-                                <rect key="frame" x="258" y="285" width="85" height="30"/>
-                                <state key="normal" title="Start Survey"/>
-                                <connections>
-                                    <action selector="startSurvey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="geK-pX-bla"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="TLJ-jb-8cB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vHY-ig-wxu"/>
-                            <constraint firstItem="TLJ-jb-8cB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zRu-TE-Uma"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="326" y="445"/>
-        </scene>
         <!--Text Style Answer Question View Controller-->
         <scene sceneID="1Kb-PC-go3">
             <objects>
@@ -466,9 +435,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SSX-7m-F67">
                                                         <rect key="frame" x="0.0" y="0.0" width="269" height="233"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toilet" translatesAutoresizingMaskIntoConstraints="NO" id="8kc-FN-zqL">
+                                                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toilet" translatesAutoresizingMaskIntoConstraints="NO" id="8kc-FN-zqL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="269" height="204"/>
+                                                                <gestureRecognizers/>
                                                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="d3q-un-nFl" appends="YES" id="IJO-Mu-e7F"/>
+                                                                </connections>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using a Toilet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9Ip-4C-XfQ">
                                                                 <rect key="frame" x="0.0" y="209" width="269" height="24"/>
@@ -486,8 +459,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="z3V-YZ-1lD">
                                                 <rect key="frame" x="269" y="0.0" width="268" height="233"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathtub" translatesAutoresizingMaskIntoConstraints="NO" id="VXL-Cu-4af">
+                                                    <imageView tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathtub" translatesAutoresizingMaskIntoConstraints="NO" id="VXL-Cu-4af">
                                                         <rect key="frame" x="0.0" y="0.0" width="268" height="209"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="dxs-Js-fRI" appends="YES" id="ob9-DT-7g2"/>
+                                                        </connections>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="MLF-vc-gIx">
                                                         <rect key="frame" x="0.0" y="209" width="268" height="24"/>
@@ -511,8 +488,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="s10-5i-U0A">
                                                         <rect key="frame" x="0.0" y="0.0" width="269" height="233"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shower" translatesAutoresizingMaskIntoConstraints="NO" id="QT0-Yj-5Av">
+                                                            <imageView tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shower" translatesAutoresizingMaskIntoConstraints="NO" id="QT0-Yj-5Av">
                                                                 <rect key="frame" x="0.0" y="0.0" width="269" height="209"/>
+                                                                <gestureRecognizers/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="eLR-AI-7jK" appends="YES" id="Nt9-kh-tBe"/>
+                                                                </connections>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-sn-YHg">
                                                                 <rect key="frame" x="0.0" y="209" width="269" height="24"/>
@@ -533,8 +514,12 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3Ld-Le-mA5">
                                                         <rect key="frame" x="0.0" y="0.0" width="268" height="233"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toothbrush" translatesAutoresizingMaskIntoConstraints="NO" id="DRk-J5-k55">
+                                                            <imageView tag="3" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toothbrush" translatesAutoresizingMaskIntoConstraints="NO" id="DRk-J5-k55">
                                                                 <rect key="frame" x="0.0" y="0.0" width="268" height="209"/>
+                                                                <gestureRecognizers/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="jNd-9h-KOF" appends="YES" id="ASf-Lz-gKn"/>
+                                                                </connections>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brushing Teeth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OW7-jK-i5Q">
                                                                 <rect key="frame" x="0.0" y="209" width="268" height="24"/>
@@ -553,15 +538,35 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="3" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="WCa-Jd-apo">
+                                <rect key="frame" x="476" y="478" width="92" height="78"/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-6z-05h">
+                                <rect key="frame" x="209" y="225" width="92" height="78"/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="2" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="e6L-ei-JuP">
+                                <rect key="frame" x="210" y="478" width="92" height="78"/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="1" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="dB6-4G-wkn">
+                                <rect key="frame" x="477" y="225" width="92" height="78"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1YG-Sn-ZSE" firstAttribute="leading" secondItem="PSR-Ed-sXB" secondAttribute="leadingMargin" id="1ZC-2f-tHV"/>
+                            <constraint firstItem="hZE-6z-05h" firstAttribute="centerX" secondItem="PSR-Ed-sXB" secondAttribute="centerX" constant="-45" id="6AA-jk-Kdx"/>
                             <constraint firstItem="ePV-sr-WrX" firstAttribute="centerX" secondItem="1YG-Sn-ZSE" secondAttribute="centerX" id="8yc-QA-vgJ"/>
+                            <constraint firstItem="hZE-6z-05h" firstAttribute="centerY" secondItem="PSR-Ed-sXB" secondAttribute="centerY" constant="-36" id="AyJ-84-Hx3"/>
                             <constraint firstItem="ePV-sr-WrX" firstAttribute="top" secondItem="1YG-Sn-ZSE" secondAttribute="bottom" constant="20" id="CtG-a2-9Yg"/>
                             <constraint firstItem="tQu-po-fb6" firstAttribute="top" secondItem="ePV-sr-WrX" secondAttribute="bottom" constant="20" id="HcN-zi-KTe"/>
+                            <constraint firstItem="e6L-ei-JuP" firstAttribute="centerY" secondItem="WCa-Jd-apo" secondAttribute="centerY" id="Ujd-9B-ZcZ"/>
+                            <constraint firstItem="tQu-po-fb6" firstAttribute="top" secondItem="WCa-Jd-apo" secondAttribute="bottom" constant="44" id="WOP-iP-Iyw"/>
                             <constraint firstItem="1YG-Sn-ZSE" firstAttribute="trailing" secondItem="PSR-Ed-sXB" secondAttribute="trailingMargin" id="cqL-YC-YiY"/>
+                            <constraint firstItem="dB6-4G-wkn" firstAttribute="top" secondItem="hZE-6z-05h" secondAttribute="top" id="h8Q-k6-eJd"/>
+                            <constraint firstItem="dB6-4G-wkn" firstAttribute="trailing" secondItem="ePV-sr-WrX" secondAttribute="trailing" id="io2-3y-0fN"/>
                             <constraint firstItem="ePV-sr-WrX" firstAttribute="leading" secondItem="PSR-Ed-sXB" secondAttribute="leadingMargin" constant="12" id="n23-cW-TJE"/>
+                            <constraint firstItem="e6L-ei-JuP" firstAttribute="centerX" secondItem="PSR-Ed-sXB" secondAttribute="centerX" constant="-44" id="oL2-yO-UKB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WCa-Jd-apo" secondAttribute="trailing" constant="12" id="ugw-oa-Osz"/>
                             <constraint firstItem="1YG-Sn-ZSE" firstAttribute="top" secondItem="9eO-F8-KWj" secondAttribute="bottom" constant="20" id="wh9-Y3-hqQ"/>
                         </constraints>
                     </view>
@@ -575,9 +580,33 @@
                         <outletCollection property="captions" destination="MLF-vc-gIx" collectionClass="NSMutableArray" id="noT-WN-DbB"/>
                         <outletCollection property="captions" destination="ma2-sn-YHg" collectionClass="NSMutableArray" id="mmX-vi-EnL"/>
                         <outletCollection property="captions" destination="OW7-jK-i5Q" collectionClass="NSMutableArray" id="dXY-vj-E2q"/>
+                        <outletCollection property="checks" destination="hZE-6z-05h" collectionClass="NSMutableArray" id="1b0-oT-g64"/>
+                        <outletCollection property="checks" destination="dB6-4G-wkn" collectionClass="NSMutableArray" id="bnx-sm-Q9x"/>
+                        <outletCollection property="checks" destination="e6L-ei-JuP" collectionClass="NSMutableArray" id="kgg-VH-MCv"/>
+                        <outletCollection property="checks" destination="WCa-Jd-apo" collectionClass="NSMutableArray" id="TAX-fS-O84"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LUe-OF-Jwr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="d3q-un-nFl">
+                    <connections>
+                        <action selector="imageTapped:" destination="Jo8-AV-SXa" id="XHL-Ks-ZrQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="dxs-Js-fRI">
+                    <connections>
+                        <action selector="imageTapped:" destination="Jo8-AV-SXa" id="Z0d-mU-Ch1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eLR-AI-7jK">
+                    <connections>
+                        <action selector="imageTapped:" destination="Jo8-AV-SXa" id="vqM-9k-Ztp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jNd-9h-KOF">
+                    <connections>
+                        <action selector="imageTapped:" destination="Jo8-AV-SXa" id="47F-7X-qLf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2693" y="1168"/>
         </scene>
@@ -648,6 +677,7 @@
     <resources>
         <image name="arrowLeft" width="10" height="18"/>
         <image name="bathtub" width="96" height="96"/>
+        <image name="check" width="92" height="78"/>
         <image name="shower" width="96" height="96"/>
         <image name="toilet" width="96" height="96"/>
         <image name="toothbrush" width="96" height="96"/>

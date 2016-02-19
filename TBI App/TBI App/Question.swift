@@ -9,7 +9,7 @@
 import UIKit
 
 enum QuestionType {
-    case Gender; case Age; case AreaOfConcern
+    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome
 }
 
 class Question: Step {
@@ -31,8 +31,18 @@ class Question: Step {
             return "Gender"
         case .Age:
             return "Age"
-        case .AreaOfConcern:
-            return "AreaOfConcern"
+        case .AOCHygiene:
+            return "AreaOfConcernHygiene"
+        case .AOCComms:
+            return "AreaOfConcernCommuniation"
+        case .AOCMobility:
+            return "AreaOfConcernMobility"
+        case .AOCHome:
+            return "AreaOfConcernHomeLife"
+        case .AOCHealth:
+            return "AreaOfConcernHealth"
+        case .AOCSndHome:
+            return "AreaOfConcernSecondHomeLife"
         }
     }
 }
@@ -63,7 +73,7 @@ class QuestionHelper: NSObject {
             "option4" : ["image" : "toothbrush", "caption" : NSLocalizedString("Brushing Teeth", comment: "")]
         ]
         
-        let hygieneAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options, multipleChoice: true)
+        let hygieneAOCQuestion = Question(type: QuestionType.AOCHygiene, title: title, options: options, multipleChoice: true)
         return hygieneAOCQuestion
     }
     
@@ -75,7 +85,7 @@ class QuestionHelper: NSObject {
             "option4" : ["image" : "internet", "caption" : NSLocalizedString("Internet Browsing", comment: "")]
         ]
         
-        let communicationAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options, multipleChoice: true)
+        let communicationAOCQuestion = Question(type: QuestionType.AOCComms, title: title, options: options, multipleChoice: true)
         return communicationAOCQuestion
     }
     
@@ -87,7 +97,7 @@ class QuestionHelper: NSObject {
             "option4" : ["image" : "train", "caption" : NSLocalizedString("Train Travel", comment: "")]
         ]
         
-        let mobilityAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options, multipleChoice: true)
+        let mobilityAOCQuestion = Question(type: QuestionType.AOCMobility, title: title, options: options, multipleChoice: true)
         return mobilityAOCQuestion
     }
     
@@ -99,7 +109,7 @@ class QuestionHelper: NSObject {
             "option4" : ["image" : "shopping", "caption" : NSLocalizedString("Shopping", comment: "")]
         ]
         
-        let mobilityAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options, multipleChoice: true)
+        let mobilityAOCQuestion = Question(type: QuestionType.AOCHome, title: title, options: options, multipleChoice: true)
         return mobilityAOCQuestion
     }
     
@@ -111,7 +121,7 @@ class QuestionHelper: NSObject {
             "option4" : ["image" : "death", "caption" : NSLocalizedString("Death", comment: "")]
         ]
         
-        let healthAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options, multipleChoice: true)
+        let healthAOCQuestion = Question(type: QuestionType.AOCHealth, title: title, options: options, multipleChoice: true)
         return healthAOCQuestion
     }
     
@@ -123,7 +133,7 @@ class QuestionHelper: NSObject {
             "option4" : ["image" : "pets", "caption" : NSLocalizedString("Pets", comment: "")]
         ]
         
-        let homeLifeAOCQuestion = Question(type: QuestionType.AreaOfConcern, title: title, options: options, multipleChoice: true)
+        let homeLifeAOCQuestion = Question(type: QuestionType.AOCSndHome, title: title, options: options, multipleChoice: true)
         return homeLifeAOCQuestion
     }
 }

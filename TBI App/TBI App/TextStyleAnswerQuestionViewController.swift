@@ -25,9 +25,15 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
     
     @IBAction func answerQuestion(button: UIButton) {
         let answerText = button.titleLabel?.text
-        let currentSession = SessionManager.sharedManager.currentSession
+        let questionType = question?.readableType()
+        let answerData = ["questionType" : question!.readableType(), "answerText" : answerText!]
         
-        CoreDataManager.createAnswerWithSession(currentSession!, answerDictionary: ["questionType" : question!.readableType(), "answerText" : answerText!])
+        let answer = CoreDataManager.fetchAnswerFromQuestionType(question!.readableType())
+        if (answer == nil) {
+            CoreDataManager.createAnswer(questionType!, answerDictionary: answerData)
+        } else {
+            CoreDataManager.updateAnswer(answer!, withAnswerDictionary: answerData)
+        }
         
         self.delegate?.questionViewController(self, didAnswerQuestion: question!)
     }
