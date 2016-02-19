@@ -39,4 +39,36 @@ class ImageQuestionViewController: QuestionViewController {
         }
     }
     
+    override func answerQuestion() {
+        super.answerQuestion()
+        
+        var answers = [Dictionary<String, AnyObject>]()
+        let questionType = question?.readableType()
+        
+        let answer = CoreDataManager.fetchAnswerFromQuestionType(question!.readableType())
+        
+        for check in checks {
+            if (!check.hidden) {
+                for var i = 0; i < captions.count; i++ {
+                    let label = captions[i]
+                    let image = images[i];
+                    if (check.tag == label.tag && check.tag == image.tag) {
+                        let options: [String : AnyObject] = question!.options!
+                        let image = options["option" + String(i + 1)]!.objectForKey("image")!
+                        let answer: Dictionary<String, AnyObject> = ["caption" : label.text!, "image" : image]
+                        answers.append(answer)
+                    }
+                }
+            }
+        }
+        
+        let answerData: Dictionary<String, AnyObject> = ["answers" : answers, "questionType" : question!.readableType()]
+        
+        if (answer == nil) {
+            CoreDataManager.createAnswer(questionType!, answerDictionary: answerData)
+        } else {
+            CoreDataManager.updateAnswer(answer!, withAnswerDictionary: answerData)
+        }
+    }
+    
 }

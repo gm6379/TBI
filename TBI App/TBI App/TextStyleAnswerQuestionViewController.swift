@@ -26,7 +26,7 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
     @IBAction func answerQuestion(button: UIButton) {
         let answerText = button.titleLabel?.text
         let questionType = question?.readableType()
-        let answerData = ["questionType" : question!.readableType(), "answerText" : answerText!]
+        let answerData: Dictionary<String, AnyObject> = ["questionType" : question!.readableType(), "answers" : ["answerText" : answerText!]]
         
         let answer = CoreDataManager.fetchAnswerFromQuestionType(question!.readableType())
         if (answer == nil) {

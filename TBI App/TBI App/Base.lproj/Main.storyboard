@@ -131,6 +131,13 @@
                                     <action selector="previousQuestion" destination="Ji1-pU-uZX" eventType="touchUpInside" id="PLy-sj-d3K"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8s-hF-0bT">
+                                <rect key="frame" x="499" y="20" width="81" height="30"/>
+                                <state key="normal" title="Export Data"/>
+                                <connections>
+                                    <action selector="exportData:" destination="Ji1-pU-uZX" eventType="touchUpInside" id="ECq-Vq-bT9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -143,6 +150,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="hrn-Il-BPB" secondAttribute="trailing" id="GTa-b0-aEi"/>
                             <constraint firstItem="ycR-EN-wBZ" firstAttribute="centerX" secondItem="hrn-Il-BPB" secondAttribute="centerX" id="H2t-HA-LNO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="hrn-Il-BPB" secondAttribute="leading" id="Jgv-Ff-60a"/>
+                            <constraint firstItem="Q8s-hF-0bT" firstAttribute="trailing" secondItem="hrn-Il-BPB" secondAttribute="trailing" id="N6S-pR-RHa"/>
+                            <constraint firstItem="Q8s-hF-0bT" firstAttribute="top" secondItem="HSg-b2-Swd" secondAttribute="bottom" id="Vae-RT-G02"/>
                             <constraint firstItem="hrn-Il-BPB" firstAttribute="top" secondItem="ycR-EN-wBZ" secondAttribute="bottom" constant="11" id="fSF-dX-COz"/>
                             <constraint firstItem="fVk-iL-Enw" firstAttribute="top" secondItem="hrn-Il-BPB" secondAttribute="bottom" constant="8" id="nsu-Qa-dH4"/>
                             <constraint firstItem="AKq-zd-Ray" firstAttribute="leading" secondItem="QVh-S7-EX4" secondAttribute="leading" id="pJr-NZ-Ohf"/>
@@ -466,7 +475,7 @@
                                                             <outletCollection property="gestureRecognizers" destination="dxs-Js-fRI" appends="YES" id="ob9-DT-7g2"/>
                                                         </connections>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="MLF-vc-gIx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="MLF-vc-gIx">
                                                         <rect key="frame" x="0.0" y="209" width="268" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="24" id="Tpb-qz-PO9"/>
@@ -495,7 +504,7 @@
                                                                     <outletCollection property="gestureRecognizers" destination="eLR-AI-7jK" appends="YES" id="Nt9-kh-tBe"/>
                                                                 </connections>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-sn-YHg">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ma2-sn-YHg">
                                                                 <rect key="frame" x="0.0" y="209" width="269" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="fsP-Ah-myS"/>
@@ -521,7 +530,7 @@
                                                                     <outletCollection property="gestureRecognizers" destination="jNd-9h-KOF" appends="YES" id="ASf-Lz-gKn"/>
                                                                 </connections>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brushing Teeth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OW7-jK-i5Q">
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brushing Teeth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OW7-jK-i5Q">
                                                                 <rect key="frame" x="0.0" y="209" width="268" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="Xr7-Uk-512"/>

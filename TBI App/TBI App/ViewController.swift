@@ -89,6 +89,15 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     }
     
     @IBAction func nextQuestion() {
+        if (sVcs[currentIndex].isKindOfClass(QuestionViewController)) {
+            let currentSVC = sVcs[currentIndex] as! QuestionViewController
+            let currentQuestion = currentSVC.question
+            if (currentQuestion?.multipleChoice == true) {
+                currentSVC.answerQuestion()
+            }
+        }
+        
+        
         if (currentIndex != sVcs.count - 1) {
             let nextIndex = abs((currentIndex + 1) % sVcs.count)
             let nextStepVC = sVcs[nextIndex]
@@ -127,6 +136,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
             }
         }
     }
+    
+    @IBAction func exportData(sender: UIButton) {
+        CoreDataManager.export()
+    }
+    
     
     // MARK: - UIPageViewControllerDelegate
     

@@ -23,6 +23,11 @@ class QuestionViewController: StepViewController {
         
         titleLabel.text = question!.title
     }
+    
+    func answerQuestion() {
+        
+    }
+    
 }
 
 class QuestionViewControllerFactory: StepViewControllerFactory {

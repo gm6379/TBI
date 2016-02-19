@@ -34,7 +34,7 @@ class CoreDataManager: NSObject {
         return session
     }
     
-    class func createAnswer(questionType: String, answerDictionary: Dictionary<String, String>) {
+    class func createAnswer(questionType: String, answerDictionary: Dictionary<String, AnyObject>) {
         let sessionId = SessionManager.sharedManager.currentSession?.objectID
         let identifier: String = (sessionId?.description)! + questionType
         
@@ -52,7 +52,7 @@ class CoreDataManager: NSObject {
     
     // MARK: - Update methods
     
-    class func updateAnswer(answer: Answer, withAnswerDictionary answerDictionary: Dictionary<String, String>) {
+    class func updateAnswer(answer: Answer, withAnswerDictionary answerDictionary: Dictionary<String, AnyObject>) {
         let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(answerDictionary)
         answer.data = data
         
@@ -103,4 +103,38 @@ class CoreDataManager: NSObject {
         return nil
     }
 
+    
+    // MARK: - Export methods
+    
+    class func export() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+        let request = NSFetchRequest(entityName: "Answer")
+        do {
+            let results = try appDelegate.managedObjectContext.executeFetchRequest(request)
+            for result in results {
+                let answer = result as! Answer
+                let identifier = answer.identifier
+                let user = answer.session?.user?.username
+                let dateCreated = answer.dateCreated?.description
+                
+                var answerData: AnyObject
+                
+                do {
+                    answerData = try NSJSONSerialization.JSONObjectWithData(answer.data!, options: NSJSONReadingOptions.AllowFragments)
+                    
+                    let data: Dictionary<String, AnyObject> = ["identifier" : identifier!, "answerData" : answerData, "user" : user!, "dateCreated" : dateCreated!]
+                    print(data)
+                } catch {
+                    print(error)
+                }
+                
+
+                
+               
+            }
+        } catch {
+            print(error)
+        }
+    }
 }
