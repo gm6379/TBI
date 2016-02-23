@@ -9,7 +9,7 @@
 import UIKit
 
 enum QuestionType {
-    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome
+    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome, TopAOC
 }
 
 class Question: Step {
@@ -32,17 +32,19 @@ class Question: Step {
         case .Age:
             return "Age"
         case .AOCHygiene:
-            return "AreaOfConcernHygiene"
+            return "AreasOfConcernHygiene"
         case .AOCComms:
             return "AreaOfConcernCommuniation"
         case .AOCMobility:
-            return "AreaOfConcernMobility"
+            return "AreasOfConcernMobility"
         case .AOCHome:
-            return "AreaOfConcernHomeLife"
+            return "AreasOfConcernHomeLife"
         case .AOCHealth:
-            return "AreaOfConcernHealth"
+            return "AreasOfConcernHealth"
         case .AOCSndHome:
-            return "AreaOfConcernSecondHomeLife"
+            return "AreasOfConcernSecondHomeLife"
+        case .TopAOC:
+            return "TopAreasOfConcern"
         }
     }
 }
@@ -135,5 +137,26 @@ class QuestionHelper: NSObject {
         
         let homeLifeAOCQuestion = Question(type: QuestionType.AOCSndHome, title: title, options: options, multipleChoice: true)
         return homeLifeAOCQuestion
+    }
+    
+    func topConcernsQuestion(concerns: [Answer]) -> Question? {
+        let title = NSLocalizedString("Tap on your top 3 areas of concern", comment: "")
+        
+        var options = Dictionary<String, AnyObject>()
+        for concern in concerns {
+            let concernData = NSKeyedUnarchiver.unarchiveObjectWithData(concern.data!) as! NSDictionary
+            
+            let answers = concernData.objectForKey("answers") as! NSArray
+            for answer in answers {
+                let caption = answer["caption"] as! String
+                let image = answer["image"] as! String
+                let option = ["image" : image, "caption" : caption]
+                options["option" + String(options.count + 1)] = option
+            }
+        }
+        
+        let topConcernsQuestion = Question(type: QuestionType.TopAOC, title: title, options: options, multipleChoice: true)
+        
+        return topConcernsQuestion
     }
 }

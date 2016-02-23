@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A908FAA51C63A6990092891F /* SelectedConcernsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908FAA41C63A6990092891F /* SelectedConcernsViewController.swift */; };
+		A908FAA51C63A6990092891F /* TopConcernsQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908FAA41C63A6990092891F /* TopConcernsQuestionViewController.swift */; };
 		A9441F331C7743840084ADF7 /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9441F311C7743840084ADF7 /* Answer+CoreDataProperties.swift */; };
 		A9441F341C7743840084ADF7 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9441F321C7743840084ADF7 /* Answer.swift */; };
 		A9569DF21C5E2AA3001F4C3F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9569DF11C5E2AA3001F4C3F /* Question.swift */; };
@@ -74,7 +74,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A908FAA41C63A6990092891F /* SelectedConcernsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedConcernsViewController.swift; sourceTree = "<group>"; };
+		A908FAA41C63A6990092891F /* TopConcernsQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopConcernsQuestionViewController.swift; sourceTree = "<group>"; };
 		A9441F311C7743840084ADF7 /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A9441F321C7743840084ADF7 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		A9569DF11C5E2AA3001F4C3F /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 				A95759A51C568B3D005634A1 /* QuestionViewController.swift */,
 				A9569DF11C5E2AA3001F4C3F /* Question.swift */,
 				A95B7BE11C5E6B3B004C8EC3 /* TextStyleAnswerQuestionViewController.swift */,
-				A908FAA41C63A6990092891F /* SelectedConcernsViewController.swift */,
+				A908FAA41C63A6990092891F /* TopConcernsQuestionViewController.swift */,
 				A9BD0A4E1C6B4E4200B1AE59 /* Resources */,
 				A9BD0A551C6B4E9700B1AE59 /* LoginViewController.swift */,
 				A96C3C1D1C7358FA000D7184 /* SessionManager.swift */,
@@ -300,7 +300,7 @@
 				A96C3C2E1C7369E3000D7184 /* Step.swift in Sources */,
 				A95C1BE81C4ECFB30063CED5 /* AppDelegate.swift in Sources */,
 				A96C3C271C736334000D7184 /* Session+CoreDataProperties.swift in Sources */,
-				A908FAA51C63A6990092891F /* SelectedConcernsViewController.swift in Sources */,
+				A908FAA51C63A6990092891F /* TopConcernsQuestionViewController.swift in Sources */,
 				A9BD0A561C6B4E9700B1AE59 /* LoginViewController.swift in Sources */,
 				A96C3C2B1C736334000D7184 /* User+CoreDataProperties.swift in Sources */,
 				A9441F331C7743840084ADF7 /* Answer+CoreDataProperties.swift in Sources */,

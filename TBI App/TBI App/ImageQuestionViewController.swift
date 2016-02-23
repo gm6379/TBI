@@ -16,6 +16,10 @@ class ImageQuestionViewController: QuestionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        images.sortInPlace({ $0.tag < $1.tag })
+        checks.sortInPlace({ $0.tag < $1.tag })
+        captions.sortInPlace({ $0.tag < $1.tag })
 
         let options = question!.options
         for var i = 0; i < images!.count; i++ {

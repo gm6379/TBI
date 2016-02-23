@@ -35,14 +35,13 @@ class CoreDataManager: NSObject {
     }
     
     class func createAnswer(questionType: String, answerDictionary: Dictionary<String, AnyObject>) {
-        let sessionId = SessionManager.sharedManager.currentSession?.objectID
-        let identifier: String = (sessionId?.description)! + questionType
+        let session = SessionManager.sharedManager.currentSession
+        let identifier: String = (session?.objectID.description)! + questionType
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let answer = NSEntityDescription.insertNewObjectForEntityForName("Answer", inManagedObjectContext: appDelegate.managedObjectContext) as! Answer
         answer.identifier = identifier
-        answer.session = SessionManager.sharedManager.currentSession
-
+        answer.session = session
         let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(answerDictionary)
         answer.data = data
         answer.dateCreated = NSDate()
@@ -63,46 +62,61 @@ class CoreDataManager: NSObject {
     // MARK: - Fetch methods
     
     class func fetchUserWithUsername(username: String) -> User? {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let request = NSFetchRequest(entityName: "User")
         request.predicate = NSPredicate(format: "username == %@", username)
+        request.fetchLimit = 1
         
-        do {
-            let results = try appDelegate.managedObjectContext.executeFetchRequest(request)
-            if (results.count != 0) {
-                return results.first! as? User
-            } else {
-                return nil
-            }
-        } catch {
-            print(error)
+        if let results = fetchResultsForRequest(request) {
+            return results.first as? User
+        } else {
+            return nil
         }
-
-        return nil
+            
     }
     
     class func fetchAnswerFromQuestionType(questionType: String) -> Answer? {
         let sessionId = SessionManager.sharedManager.currentSession?.objectID
         let identifier: String = (sessionId?.description)! + questionType
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let request = NSFetchRequest(entityName: "Answer")
         request.predicate = NSPredicate(format: "identifier == %@", identifier)
+        request.fetchLimit = 1
+        
+        if let results = fetchResultsForRequest(request) {
+            return results.first as? Answer
+        } else {
+            return nil
+        }
+    }
+    
+    // queries answer entity for areas of concern answers for current session
+    class func fetchAreaOfConcernAnswers() -> [Answer]? {
+        let sessionId = SessionManager.sharedManager.currentSession?.objectID.description
+        let request = NSFetchRequest(entityName: "Answer")
+        
+        let currentSessionPredicate = NSPredicate(format: "identifier contains[c] %@", sessionId!)
+        let areaOfConcernPredicate = NSPredicate(format: "identifier contains[c] %@", "AreaOfConcern")
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [currentSessionPredicate, areaOfConcernPredicate])
+        
+        if let results = fetchResultsForRequest(request) {
+            return results as? [Answer]
+        } else {
+            return nil
+        }
+    }
+    
+    class func fetchResultsForRequest(request: NSFetchRequest) -> [AnyObject]? {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         do {
             let results = try appDelegate.managedObjectContext.executeFetchRequest(request)
-            if (results.count != 0) {
-                return results.first! as? Answer
-            } else {
-                return nil
-            }
+            return results
         } catch {
             print(error)
         }
         
         return nil
     }
-
     
     // MARK: - Export methods
     
@@ -115,23 +129,13 @@ class CoreDataManager: NSObject {
             for result in results {
                 let answer = result as! Answer
                 let identifier = answer.identifier
-                let user = answer.session?.user?.username
+                let user = answer.session!.user!.username
                 let dateCreated = answer.dateCreated?.description
                 
-                var answerData: AnyObject
+                let answerData = NSKeyedUnarchiver.unarchiveObjectWithData(answer.data!)
                 
-                do {
-                    answerData = try NSJSONSerialization.JSONObjectWithData(answer.data!, options: NSJSONReadingOptions.AllowFragments)
-                    
-                    let data: Dictionary<String, AnyObject> = ["identifier" : identifier!, "answerData" : answerData, "user" : user!, "dateCreated" : dateCreated!]
-                    print(data)
-                } catch {
-                    print(error)
-                }
-                
-
-                
-               
+                let data: Dictionary<String, AnyObject> = ["identifier" : identifier!, "answerData" : answerData!, "user" : user!, "dateCreated" : dateCreated!]
+                print(data)
             }
         } catch {
             print(error)

@@ -47,4 +47,8 @@ class QuestionViewControllerFactory: StepViewControllerFactory {
         return imageQuestionViewController
     }
     
+    func topConcernsQuestionViewController() -> QuestionViewController {
+        let topConcernsQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("TopConcernsQuestionViewController") as! TopConcernsQuestionViewController
+        return topConcernsQuestionViewController
+    }
 }
