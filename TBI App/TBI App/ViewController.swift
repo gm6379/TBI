@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     var pageViewController: UIPageViewController?
     var currentIndex = 0
     var currentSection = 0
+    let numberOfSections = 2
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
@@ -65,12 +66,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         if (currentIndex != currentSVCs.count - 1) {
             moveToNextStep()
         } else {
-            if (currentSection == sVCs.count - 1) {
+            if let section = nextSection() {
+                currentSVCs = section
                 currentSection++
-                currentIndex = 0
-                if shouldLoadNextSectionQuestions() == true {
-                    moveToNextStep()
-                }
+                currentIndex = -1
+                moveToNextStep()
             }
         }
     }
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
             if (currentSection != 0) {
                 currentSection--
                 currentSVCs = sVCs[currentSection]
-                currentIndex = currentSVCs.count - 1
+                currentIndex = currentSVCs.count
                 moveToPreviousStep()
             }
         }
@@ -177,39 +177,51 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         
         var questions = [Question]()
         
-        // check if user answered any area of concern questions
-        if let areaOfConcernAnswers = CoreDataManager.fetchAreaOfConcernAnswers() {
-            questions.append(helper.topConcernsQuestion(areaOfConcernAnswers)!)
-        }
-        
-        let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
-        let qVcs: [StepViewController] = [qVcFactory.topConcernsQuestionViewController()]
-        
-        for var i = 0; i < questions.count; i++ {
-            let question = questions[i]
-            let qVc = qVcs[i] as! QuestionViewController
-            
-            qVc.question = question
-            qVc.delegate = self
-        }
-        
-
-        
-        return qVcs
-    }
-    
-    func shouldLoadNextSectionQuestions() -> Bool {
-        if (sVCs.count == 1) {
-            if let secondSectionQuestions = secondSectionQuestions() {
-                currentSVCs = secondSectionQuestions
-                sVCs.append(currentSVCs)
-                return true
-            } else {
-                return false
+        // check if user selected >3 areas of concern
+        if let areaOfConcernAnswers = CoreDataManager.fetchAreaOfConcernAnswers() as [Answer]? {
+            var numConcerns = 0
+            for answer in areaOfConcernAnswers {
+                let answerData = NSKeyedUnarchiver.unarchiveObjectWithData(answer.data!)
+                let answers = answerData!["answers"] as! [[String : String]]
+                numConcerns += answers.count
+            }
+            if numConcerns > 3 {
+                questions.append(helper.topConcernsQuestion(areaOfConcernAnswers)!)
             }
         }
         
-        return false
+        if (questions.count > 0) {
+            let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
+            let qVcs: [StepViewController] = [qVcFactory.topConcernsQuestionViewController()]
+            
+            for var i = 0; i < questions.count; i++ {
+                let question = questions[i]
+                let qVc = qVcs[i] as! QuestionViewController
+                
+                qVc.question = question
+                qVc.delegate = self
+            }
+            
+            return qVcs
+        } else {
+            return nil
+        }
+    }
+    
+    func nextSection() -> [StepViewController]? {
+        // load the next section
+        if (currentSection != numberOfSections - 1) {
+            if (currentSection == 0) {
+                if let questions = secondSectionQuestions() {
+                    if (sVCs.count == 1) {
+                        sVCs.append(questions)
+                    }
+                    return questions
+                }
+            }
+        }
+        
+        return nil
     }
     
     @IBAction func exportData(sender: UIButton) {

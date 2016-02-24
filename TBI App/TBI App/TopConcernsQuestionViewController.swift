@@ -9,16 +9,15 @@
 import UIKit
 
 class TopConcernsQuestionViewController: QuestionViewController {
-
+    
+    var options: Dictionary<String, AnyObject>?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        options = question?.options
     }
     
-    let datasource = ["", "", "", ""]
-
 }
 
 extension TopConcernsQuestionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -28,39 +27,47 @@ extension TopConcernsQuestionViewController: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasource.count
+        return options!.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
+        let imageView = UIImageView(frame: cell.bounds)
+        let imageName = options!["option" + String(indexPath.item + 1)]!["image"] as! String
+        let image = UIImage(named: imageName)
+        imageView.image = image
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        cell.addSubview(imageView)
+        
+        return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         var itemsPerRow = 0
-        if (datasource.count <= 2) {
+        if (options!.count <= 2) {
             itemsPerRow = 1
-        } else if (datasource.count < 7) {
+        } else if (options!.count < 7) {
             itemsPerRow = 2
-        } else if (datasource.count < 13) {
+        } else if (options!.count < 13) {
             itemsPerRow = 3
         } else {
             itemsPerRow = 4
         }
         
-        let remainder = datasource.count % itemsPerRow
+        let remainder = options!.count % itemsPerRow
         var cellWidth : CGFloat = 0
         
         // if the index path is within the remainder, divide by that instead of the constant
-        if datasource.count - indexPath.item <= remainder {
+        if options!.count - indexPath.item <= remainder {
             cellWidth = (collectionView.frame.width / CGFloat(remainder))
         }
         else {
             cellWidth = (collectionView.frame.width / CGFloat(itemsPerRow))
         }
         
-        var rows = datasource.count / Int(itemsPerRow)
-        if datasource.count % Int(itemsPerRow) >= 1 {
+        var rows = options!.count / Int(itemsPerRow)
+        if options!.count % Int(itemsPerRow) >= 1 {
             rows += 1
         }
         

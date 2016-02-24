@@ -94,8 +94,8 @@ class CoreDataManager: NSObject {
         let sessionId = SessionManager.sharedManager.currentSession?.objectID.description
         let request = NSFetchRequest(entityName: "Answer")
         
-        let currentSessionPredicate = NSPredicate(format: "identifier contains[c] %@", sessionId!)
-        let areaOfConcernPredicate = NSPredicate(format: "identifier contains[c] %@", "AreaOfConcern")
+        let currentSessionPredicate = NSPredicate(format: "identifier contains %@", sessionId!)
+        let areaOfConcernPredicate = NSPredicate(format: "identifier contains %@", "AreasOfConcern")
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [currentSessionPredicate, areaOfConcernPredicate])
         
         if let results = fetchResultsForRequest(request) {
