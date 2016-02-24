@@ -11,11 +11,39 @@ import UIKit
 class TopConcernsQuestionViewController: QuestionViewController {
     
     var options: Dictionary<String, AnyObject>?
+    var selectedConcerns = NSMutableSet()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         options = question?.options
+    }
+    
+    override func answerQuestion() {
+        super.answerQuestion()
+        
+        if (selectedConcerns.count == 3) {
+            let questionType = question!.readableType()
+            let answerData: Dictionary<String, AnyObject> = ["answers" : selectedConcerns, "questionType" : question!.readableType()]
+            
+            let answer = CoreDataManager.fetchAnswerFromQuestionType(questionType)
+            if (answer == nil) {
+                CoreDataManager.createAnswer(questionType, answerDictionary: answerData)
+            } else {
+                CoreDataManager.updateAnswer(answer!, withAnswerDictionary: answerData)
+            }
+            
+            delegate?.questionViewController(self, didAnswerQuestion: question!)
+        } else {
+            displayConcernsAmountError()
+        }
+    }
+    
+    func displayConcernsAmountError() {
+        let alert = UIAlertController(title: "Error", message: NSLocalizedString("Please select 3 concerns", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
     }
     
 }
@@ -31,15 +59,30 @@ extension TopConcernsQuestionViewController: UICollectionViewDataSource, UIColle
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath)
-        let imageView = UIImageView(frame: cell.bounds)
-        let imageName = options!["option" + String(indexPath.item + 1)]!["image"] as! String
-        let image = UIImage(named: imageName)
-        imageView.image = image
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        cell.addSubview(imageView)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TopConcernCollectionViewCell", forIndexPath: indexPath) as! TopConcernCollectionViewCell
+        let option = options!["option" + String(indexPath.item + 1)]! as! [String : String]
+        let imageName = option["image"]! as String
+        cell.concernImageView.image = UIImage(named: imageName)
+        let caption = option["caption"]! as String
+        cell.caption = caption
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! TopConcernCollectionViewCell
+        
+        let hidden = cell.checkImageView.hidden
+        
+        if (hidden) {
+            if (selectedConcerns.count != 3) {
+                selectedConcerns.addObject(cell.caption!)
+                cell.checkImageView.hidden = !hidden
+            }
+        } else {
+            selectedConcerns.removeObject(cell.caption!)
+            cell.checkImageView.hidden = !hidden
+        }
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {

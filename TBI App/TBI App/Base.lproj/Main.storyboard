@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Text Style Answer Question View Controller-->
@@ -651,15 +652,37 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="R2Q-Fk-Dm6">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TopConcernCollectionViewCell" id="R2Q-Fk-Dm6" customClass="TopConcernCollectionViewCell" customModule="TBI_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJ9-79-SfV">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="ihB-Xk-cXG">
+                                                    <rect key="frame" x="25" y="25" width="25" height="25"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="ihB-Xk-cXG" firstAttribute="width" secondItem="R2Q-Fk-Dm6" secondAttribute="width" multiplier="0.5" id="KuE-20-Vbg"/>
+                                            <constraint firstItem="hJ9-79-SfV" firstAttribute="top" secondItem="R2Q-Fk-Dm6" secondAttribute="top" id="OoZ-gS-mY9"/>
+                                            <constraint firstItem="ihB-Xk-cXG" firstAttribute="height" secondItem="R2Q-Fk-Dm6" secondAttribute="height" multiplier="0.5" id="aPc-HO-Wj6"/>
+                                            <constraint firstAttribute="trailing" secondItem="hJ9-79-SfV" secondAttribute="trailing" id="ajC-kJ-HJm"/>
+                                            <constraint firstAttribute="bottom" secondItem="ihB-Xk-cXG" secondAttribute="bottom" id="dDZ-gd-dyT"/>
+                                            <constraint firstAttribute="bottom" secondItem="hJ9-79-SfV" secondAttribute="bottom" id="rsD-b6-VR7"/>
+                                            <constraint firstItem="hJ9-79-SfV" firstAttribute="leading" secondItem="R2Q-Fk-Dm6" secondAttribute="leading" id="ubN-Nq-YPs"/>
+                                            <constraint firstAttribute="trailing" secondItem="ihB-Xk-cXG" secondAttribute="trailing" id="wFZ-V4-rsy"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="checkImageView" destination="ihB-Xk-cXG" id="cB7-WQ-Hb3"/>
+                                            <outlet property="concernImageView" destination="hJ9-79-SfV" id="obx-va-M9p"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
