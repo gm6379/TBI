@@ -11,7 +11,7 @@ import UIKit
 class TopConcernsQuestionViewController: QuestionViewController {
     
     var options: Dictionary<String, AnyObject>?
-    var selectedConcerns = NSMutableSet()
+    var selectedConcerns = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class TopConcernsQuestionViewController: QuestionViewController {
                 CoreDataManager.updateAnswer(answer!, withAnswerDictionary: answerData)
             }
             
-            delegate?.questionViewController(self, didAnswerQuestion: question!)
+            self.delegate?.questionViewController(self, didAnswerQuestion: question!)
         } else {
             displayConcernsAmountError()
         }
@@ -62,6 +62,7 @@ extension TopConcernsQuestionViewController: UICollectionViewDataSource, UIColle
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("TopConcernCollectionViewCell", forIndexPath: indexPath) as! TopConcernCollectionViewCell
         let option = options!["option" + String(indexPath.item + 1)]! as! [String : String]
         let imageName = option["image"]! as String
+        cell.imageName = imageName
         cell.concernImageView.image = UIImage(named: imageName)
         let caption = option["caption"]! as String
         cell.caption = caption
@@ -76,11 +77,11 @@ extension TopConcernsQuestionViewController: UICollectionViewDataSource, UIColle
         
         if (hidden) {
             if (selectedConcerns.count != 3) {
-                selectedConcerns.addObject(cell.caption!)
+                selectedConcerns.addObject(["caption" : cell.caption!, "image" : cell.imageName!])
                 cell.checkImageView.hidden = !hidden
             }
         } else {
-            selectedConcerns.removeObject(cell.caption!)
+            selectedConcerns.removeObject(["caption" : cell.caption!, "image" : cell.imageName!])
             cell.checkImageView.hidden = !hidden
         }
     }

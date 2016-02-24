@@ -105,6 +105,21 @@ class CoreDataManager: NSObject {
         }
     }
     
+    class func fetchTopAreasOfConcernAnswer() -> Answer? {
+        let sessionId = SessionManager.sharedManager.currentSession?.objectID.description
+        let request = NSFetchRequest(entityName: "Answer")
+        
+        let currentSessionPredicate = NSPredicate(format: "identifier contains %@", sessionId!)
+        let areaOfConcernPredicate = NSPredicate(format: "identifier contains %@", "TopAOC")
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [currentSessionPredicate, areaOfConcernPredicate])
+        
+        if let results = fetchResultsForRequest(request) {
+            return results.first as? Answer
+        } else {
+            return nil
+        }
+    }
+    
     class func fetchResultsForRequest(request: NSFetchRequest) -> [AnyObject]? {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         

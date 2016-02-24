@@ -186,25 +186,38 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 numConcerns += answers.count
             }
             if numConcerns > 3 {
-                questions.append(helper.topConcernsQuestion(areaOfConcernAnswers)!)
+                questions.append(helper.generatedConcernsQuestion(areaOfConcernAnswers, title: NSLocalizedString("Tap on your top 3 areas of concern", comment: ""), questionType: QuestionType.TopAOC)!)
+            } else {
+                helpAOCQuestion()
             }
         }
         
         if (questions.count > 0) {
             let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
             let qVcs: [StepViewController] = [qVcFactory.topConcernsQuestionViewController()]
+            let question = questions[0]
+            let qVc = qVcs[0] as! QuestionViewController
             
-            for var i = 0; i < questions.count; i++ {
-                let question = questions[i]
-                let qVc = qVcs[i] as! QuestionViewController
-                
-                qVc.question = question
-                qVc.delegate = self
-            }
+            qVc.question = question
+            qVc.delegate = self
             
             return qVcs
         } else {
             return nil
+        }
+    }
+    
+    func helpAOCQuestion() {
+        // NOTE -- here we need to check if the user has <=3 concerns
+        // if this is the case these are carried through to the helpAOC question, otherwise, we show the topAOC question first
+        if let answer = CoreDataManager.fetchTopAreasOfConcernAnswer() {
+            let helpAOCQuestion = QuestionHelper().generatedConcernsQuestion([answer], title: NSLocalizedString("Tap concerns where you are receiving help", comment: ""), questionType: QuestionType.HelpAOC)
+            let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
+            let qVc = qVcFactory.threeImageQuestionViewController()
+            qVc.question = helpAOCQuestion
+            qVc.delegate = self
+            currentSVCs.append(qVc)
+            moveToNextStep()
         }
     }
     
@@ -254,8 +267,12 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     
     // MARK: - QuestionViewControllerDelgate
     
-    func questionViewController(viewController: QuestionViewController, didAnswerQuestion: Question) {
-        nextQuestion()
+    func questionViewController(viewController: QuestionViewController, didAnswerQuestion question: Question) {
+        if (question.type == QuestionType.TopAOC) {
+            helpAOCQuestion()
+        } else {
+            nextQuestion()
+        }
     }
     
     // MARK: - OnBoardingViewControllerDelegate

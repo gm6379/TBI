@@ -9,7 +9,7 @@
 import UIKit
 
 enum QuestionType {
-    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome, TopAOC
+    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome, TopAOC, HelpAOC
 }
 
 class Question: Step {
@@ -44,7 +44,9 @@ class Question: Step {
         case .AOCSndHome:
             return "AreasOfConcernSecondHomeLife"
         case .TopAOC:
-            return "TopAreasOfConcern"
+            return "TopAOC"
+        case .HelpAOC:
+            return "AOCWhereReceivingHelp"
         }
     }
 }
@@ -139,9 +141,7 @@ class QuestionHelper: NSObject {
         return homeLifeAOCQuestion
     }
     
-    func topConcernsQuestion(concerns: [Answer]) -> Question? {
-        let title = NSLocalizedString("Tap on your top 3 areas of concern", comment: "")
-        
+    func generatedConcernsQuestion(concerns: [Answer], title: String, questionType: QuestionType) -> Question? {
         var options = Dictionary<String, AnyObject>()
         for concern in concerns {
             let concernData = NSKeyedUnarchiver.unarchiveObjectWithData(concern.data!) as! NSDictionary
@@ -155,8 +155,8 @@ class QuestionHelper: NSObject {
             }
         }
         
-        let topConcernsQuestion = Question(type: QuestionType.TopAOC, title: title, options: options, multipleChoice: true)
+        let concernsQuestion = Question(type: questionType, title: title, options: options, multipleChoice: true)
         
-        return topConcernsQuestion
+        return concernsQuestion
     }
 }

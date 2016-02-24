@@ -14,4 +14,5 @@ class TopConcernCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var checkImageView: UIImageView!
     
     var caption: String?
+    var imageName: String?
 }

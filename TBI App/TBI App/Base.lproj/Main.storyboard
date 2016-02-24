@@ -619,7 +619,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2693" y="1168"/>
+            <point key="canvasLocation" x="2694" y="1168"/>
         </scene>
         <!--Top Concerns Question View Controller-->
         <scene sceneID="QR1-o8-HS4">
@@ -709,6 +709,180 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFn-Hb-an6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3348" y="1168"/>
+        </scene>
+        <!--Image Question View Controller-->
+        <scene sceneID="Gxl-Y5-wtJ">
+            <objects>
+                <viewController storyboardIdentifier="ThreeImageQuestionViewController" id="I1r-IC-oqT" customClass="ImageQuestionViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zIi-jL-8YB"/>
+                        <viewControllerLayoutGuide type="bottom" id="EcR-iD-oqe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qaO-E9-4az">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-uY-l83">
+                                <rect key="frame" x="20" y="40" width="560" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ejh-rH-Ml2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JrV-LX-91z">
+                                <rect key="frame" x="32" y="94" width="537" height="486"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mLS-qe-Ins">
+                                        <rect key="frame" x="0.0" y="0.0" width="537" height="233"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pM3-i8-zyJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="269" height="233"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3px-eZ-esy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="269" height="233"/>
+                                                        <subviews>
+                                                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toilet" translatesAutoresizingMaskIntoConstraints="NO" id="yYD-pl-TsG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="269" height="204"/>
+                                                                <gestureRecognizers/>
+                                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="I5v-KK-BN1" appends="YES" id="0DD-C7-VLk"/>
+                                                                </connections>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using a Toilet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Fuu-py-fZW">
+                                                                <rect key="frame" x="0.0" y="209" width="269" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="zjJ-J2-BYo"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="5BT-Bh-8uz">
+                                                <rect key="frame" x="269" y="0.0" width="268" height="233"/>
+                                                <subviews>
+                                                    <imageView tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathtub" translatesAutoresizingMaskIntoConstraints="NO" id="uSl-Lm-hm1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="268" height="209"/>
+                                                        <gestureRecognizers/>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="erz-wv-OKo" appends="YES" id="1YP-Oc-DPg"/>
+                                                        </connections>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="3CN-1i-wGm">
+                                                        <rect key="frame" x="0.0" y="209" width="268" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="afy-vH-idS"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qib-tc-c9h">
+                                        <rect key="frame" x="0.0" y="253" width="537" height="233"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZZ-Nm-Icb">
+                                                <rect key="frame" x="0.0" y="0.0" width="537" height="233"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hRi-tB-OE5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="537" height="233"/>
+                                                        <subviews>
+                                                            <imageView tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shower" translatesAutoresizingMaskIntoConstraints="NO" id="gS2-Of-FIG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="537" height="209"/>
+                                                                <gestureRecognizers/>
+                                                                <connections>
+                                                                    <outletCollection property="gestureRecognizers" destination="Vpn-aa-ZwU" appends="YES" id="qfy-GS-t9e"/>
+                                                                </connections>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="MQI-nU-gLN">
+                                                                <rect key="frame" x="0.0" y="209" width="537" height="24"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="24" id="rHh-G7-4YO"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="EaM-q9-JBP">
+                                <rect key="frame" x="209" y="225" width="92" height="78"/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="2" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-XR-1CV">
+                                <rect key="frame" x="298" y="478" width="92" height="78"/>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="1" contentMode="center" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="id5-Hp-A8r">
+                                <rect key="frame" x="477" y="225" width="92" height="78"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NFt-XR-1CV" firstAttribute="bottom" secondItem="JrV-LX-91z" secondAttribute="bottom" constant="-24" id="3rV-TK-W0z"/>
+                            <constraint firstItem="cYn-uY-l83" firstAttribute="top" secondItem="zIi-jL-8YB" secondAttribute="bottom" constant="20" id="Asj-ea-KQf"/>
+                            <constraint firstItem="EaM-q9-JBP" firstAttribute="centerY" secondItem="qaO-E9-4az" secondAttribute="centerY" constant="-36" id="Boj-1c-L8T"/>
+                            <constraint firstItem="id5-Hp-A8r" firstAttribute="top" secondItem="EaM-q9-JBP" secondAttribute="top" id="HAt-oD-d3B"/>
+                            <constraint firstItem="EaM-q9-JBP" firstAttribute="centerX" secondItem="qaO-E9-4az" secondAttribute="centerX" constant="-45" id="HJY-3D-jeF"/>
+                            <constraint firstItem="JrV-LX-91z" firstAttribute="centerX" secondItem="cYn-uY-l83" secondAttribute="centerX" id="JSb-oR-JmO"/>
+                            <constraint firstItem="JrV-LX-91z" firstAttribute="leading" secondItem="qaO-E9-4az" secondAttribute="leadingMargin" constant="12" id="Npp-gW-J44"/>
+                            <constraint firstItem="id5-Hp-A8r" firstAttribute="trailing" secondItem="JrV-LX-91z" secondAttribute="trailing" id="bSX-Fm-lls"/>
+                            <constraint firstItem="NFt-XR-1CV" firstAttribute="centerX" secondItem="qaO-E9-4az" secondAttribute="centerX" constant="44" id="dkG-ih-P8Y"/>
+                            <constraint firstItem="JrV-LX-91z" firstAttribute="top" secondItem="cYn-uY-l83" secondAttribute="bottom" constant="20" id="nOA-Bc-bBB"/>
+                            <constraint firstItem="cYn-uY-l83" firstAttribute="leading" secondItem="qaO-E9-4az" secondAttribute="leadingMargin" id="qbg-S9-AQb"/>
+                            <constraint firstItem="cYn-uY-l83" firstAttribute="trailing" secondItem="qaO-E9-4az" secondAttribute="trailingMargin" id="s8p-PR-glA"/>
+                            <constraint firstItem="EcR-iD-oqe" firstAttribute="top" secondItem="JrV-LX-91z" secondAttribute="bottom" constant="20" id="zCg-BW-AvB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="cYn-uY-l83" id="AwP-Zu-cfu"/>
+                        <outletCollection property="images" destination="yYD-pl-TsG" collectionClass="NSMutableArray" id="Xit-OK-WWd"/>
+                        <outletCollection property="images" destination="uSl-Lm-hm1" collectionClass="NSMutableArray" id="IVv-nl-N9M"/>
+                        <outletCollection property="images" destination="gS2-Of-FIG" collectionClass="NSMutableArray" id="Jjy-5E-6er"/>
+                        <outletCollection property="captions" destination="Fuu-py-fZW" collectionClass="NSMutableArray" id="6hO-2v-MnJ"/>
+                        <outletCollection property="captions" destination="3CN-1i-wGm" collectionClass="NSMutableArray" id="OUX-Y5-4t5"/>
+                        <outletCollection property="captions" destination="MQI-nU-gLN" collectionClass="NSMutableArray" id="0fg-Fx-Mae"/>
+                        <outletCollection property="checks" destination="EaM-q9-JBP" collectionClass="NSMutableArray" id="xHs-Ob-XDK"/>
+                        <outletCollection property="checks" destination="id5-Hp-A8r" collectionClass="NSMutableArray" id="yyG-IH-dbK"/>
+                        <outletCollection property="checks" destination="NFt-XR-1CV" collectionClass="NSMutableArray" id="l84-Ch-aQ0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xiS-nd-aIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="I5v-KK-BN1">
+                    <connections>
+                        <action selector="imageTapped:" destination="I1r-IC-oqT" id="QQy-KL-mDr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="erz-wv-OKo">
+                    <connections>
+                        <action selector="imageTapped:" destination="I1r-IC-oqT" id="Bq3-WZ-0SP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Vpn-aa-ZwU">
+                    <connections>
+                        <action selector="imageTapped:" destination="I1r-IC-oqT" id="9YC-9l-Ino"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="QrA-2M-dig">
+                    <connections>
+                        <action selector="imageTapped:" destination="I1r-IC-oqT" id="e6a-ws-yuH"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2713" y="1856"/>
         </scene>
     </scenes>
     <resources>
