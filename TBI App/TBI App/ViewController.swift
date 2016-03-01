@@ -59,10 +59,18 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
             let currentSVC = currentSVCs[currentIndex] as! QuestionViewController
             let currentQuestion = currentSVC.question
             if (currentQuestion?.multipleChoice == true) {
-                currentSVC.answerQuestion()
+                if (currentSVC.answerQuestion()) {
+                    determineStepChange()
+                }
+            } else {
+                determineStepChange()
             }
+        } else {
+            determineStepChange()
         }
-        
+    }
+    
+    func determineStepChange() {
         if (currentIndex != currentSVCs.count - 1) {
             moveToNextStep()
         } else {
@@ -121,7 +129,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
             skipButton.hidden = true
         }
         
-        if (currentIndex == 0) {
+        if (currentSection == 0 && currentIndex == 0) {
             backArrow.hidden = true
             backButton.enabled = false
         }
@@ -176,6 +184,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         let helper = QuestionHelper()
         
         var questions = [Question]()
+        let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
+        var qVcs = [StepViewController]()
         
         // check if user selected >3 areas of concern
         if let areaOfConcernAnswers = CoreDataManager.fetchAreaOfConcernAnswers() as [Answer]? {
@@ -187,19 +197,22 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
             }
             if numConcerns > 3 {
                 questions.append(helper.generatedConcernsQuestion(areaOfConcernAnswers, title: NSLocalizedString("Tap on your top 3 areas of concern", comment: ""), questionType: QuestionType.TopAOC)!)
-            } else {
-                helpAOCQuestion()
+                qVcs.append(qVcFactory.topConcernsQuestionViewController())
+            }
+            if let question = helpAOCQuestion() {
+                questions.append(question)
+                qVcs.append(qVcFactory.threeImageQuestionViewController())
             }
         }
         
         if (questions.count > 0) {
-            let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
-            let qVcs: [StepViewController] = [qVcFactory.topConcernsQuestionViewController()]
-            let question = questions[0]
-            let qVc = qVcs[0] as! QuestionViewController
-            
-            qVc.question = question
-            qVc.delegate = self
+            for var i = 0; i < questions.count; i++ {
+                let question = questions[i]
+                let qVc = qVcs[i] as! QuestionViewController
+                
+                qVc.question = question
+                qVc.delegate = self
+            }
             
             return qVcs
         } else {
@@ -207,18 +220,19 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         }
     }
     
-    func helpAOCQuestion() {
-        // NOTE -- here we need to check if the user has <=3 concerns
-        // if this is the case these are carried through to the helpAOC question, otherwise, we show the topAOC question first
+    func helpAOCQuestion() -> Question? {
+        var helpAOCQuestion: Question?
+        let helpAOCTitle = NSLocalizedString("Tap concerns where you are receiving help", comment: "")
         if let answer = CoreDataManager.fetchTopAreasOfConcernAnswer() {
-            let helpAOCQuestion = QuestionHelper().generatedConcernsQuestion([answer], title: NSLocalizedString("Tap concerns where you are receiving help", comment: ""), questionType: QuestionType.HelpAOC)
-            let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
-            let qVc = qVcFactory.threeImageQuestionViewController()
-            qVc.question = helpAOCQuestion
-            qVc.delegate = self
-            currentSVCs.append(qVc)
-            moveToNextStep()
+            helpAOCQuestion = QuestionHelper().generatedConcernsQuestion([answer], title: helpAOCTitle, questionType: .HelpAOC)
+        } else { // the user had <=3 initial concerns
+            // iterate through the area of concern answers and collect into an array
+            if let answers = CoreDataManager.fetchAreaOfConcernAnswers() {
+                helpAOCQuestion = QuestionHelper().generatedConcernsQuestion(answers, title: helpAOCTitle, questionType: .HelpAOC)
+            }
         }
+        
+        return helpAOCQuestion
     }
     
     func nextSection() -> [StepViewController]? {
@@ -269,7 +283,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     
     func questionViewController(viewController: QuestionViewController, didAnswerQuestion question: Question) {
         if (question.type == QuestionType.TopAOC) {
-            helpAOCQuestion()
+            let question = helpAOCQuestion()
+            let nextQVC = currentSVCs[currentIndex + 1] as! QuestionViewController
+            nextQVC.question = question
         } else {
             nextQuestion()
         }

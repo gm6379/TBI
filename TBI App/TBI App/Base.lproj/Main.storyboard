@@ -211,7 +211,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dS-Yu-Dpv">
                                 <rect key="frame" x="20" y="38" width="560" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMj-4q-bCc">
@@ -633,7 +633,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your top 3 areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="02y-sk-zNl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your top 3 areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="02y-sk-zNl">
                                 <rect key="frame" x="20" y="40" width="560" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Mls-zm-ubl"/>
@@ -884,11 +884,100 @@
             </objects>
             <point key="canvasLocation" x="2713" y="1856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="AJN-em-G1F">
+            <objects>
+                <viewController storyboardIdentifier="RehabiliationQuestionViewController" id="hnu-dP-Hwu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ooi-Su-K0r"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ab-iR-hJ4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M7y-F7-aKx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="human-outline" translatesAutoresizingMaskIntoConstraints="NO" id="YkT-gM-uPq">
+                                <rect key="frame" x="147" y="140" width="306" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="306" id="wGl-fp-GII"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on areas where you are receiving rehabilitation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="UC6-1F-qeo">
+                                <rect key="frame" x="20" y="34" width="560" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="4Hp-iQ-hrm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-0y-9cH">
+                                <rect key="frame" x="147" y="140" width="306" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.67843137249999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdj-n5-fbQ">
+                                <rect key="frame" x="147" y="220" width="306" height="94"/>
+                                <color key="backgroundColor" red="1" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8zV-dP-gt9">
+                                <rect key="frame" x="147" y="314" width="306" height="64"/>
+                                <subviews>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebV-dU-5UA">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="64"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojR-ZB-y5U">
+                                        <rect key="frame" x="102" y="0.0" width="102" height="64"/>
+                                        <color key="backgroundColor" red="0.24385793585526316" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tf3-pP-lFV">
+                                        <rect key="frame" x="204" y="0.0" width="102" height="64"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4Q-2t-ejf">
+                                <rect key="frame" x="147" y="378" width="306" height="162"/>
+                                <color key="backgroundColor" red="1" green="0.98818923985030183" blue="0.5655395355885956" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8zV-dP-gt9" firstAttribute="trailing" secondItem="YkT-gM-uPq" secondAttribute="trailing" id="02t-hP-9Qk"/>
+                            <constraint firstItem="o4Q-2t-ejf" firstAttribute="top" secondItem="8zV-dP-gt9" secondAttribute="bottom" id="07V-4a-mvt"/>
+                            <constraint firstItem="ZKA-0y-9cH" firstAttribute="trailing" secondItem="YkT-gM-uPq" secondAttribute="trailing" id="0oY-85-iut"/>
+                            <constraint firstItem="Hdj-n5-fbQ" firstAttribute="leading" secondItem="YkT-gM-uPq" secondAttribute="leading" id="5Ed-ev-eK3"/>
+                            <constraint firstItem="ZKA-0y-9cH" firstAttribute="height" secondItem="YkT-gM-uPq" secondAttribute="height" multiplier="0.2" id="7nD-Ln-gUI"/>
+                            <constraint firstItem="o4Q-2t-ejf" firstAttribute="bottom" secondItem="YkT-gM-uPq" secondAttribute="bottom" id="A2B-Cd-cGj"/>
+                            <constraint firstItem="YkT-gM-uPq" firstAttribute="top" secondItem="UC6-1F-qeo" secondAttribute="bottom" constant="55" id="C28-bj-RFy"/>
+                            <constraint firstItem="8zV-dP-gt9" firstAttribute="leading" secondItem="YkT-gM-uPq" secondAttribute="leading" id="H8a-ZG-TBR"/>
+                            <constraint firstItem="ZKA-0y-9cH" firstAttribute="leading" secondItem="YkT-gM-uPq" secondAttribute="leading" id="HPO-IH-73z"/>
+                            <constraint firstItem="UC6-1F-qeo" firstAttribute="leading" secondItem="M7y-F7-aKx" secondAttribute="leadingMargin" id="Hbp-Ai-fZY"/>
+                            <constraint firstItem="ZKA-0y-9cH" firstAttribute="top" secondItem="YkT-gM-uPq" secondAttribute="top" id="IMR-oI-9KW"/>
+                            <constraint firstItem="8Ab-iR-hJ4" firstAttribute="top" secondItem="YkT-gM-uPq" secondAttribute="bottom" constant="60" id="QuI-UQ-IuM"/>
+                            <constraint firstItem="8zV-dP-gt9" firstAttribute="height" secondItem="YkT-gM-uPq" secondAttribute="height" multiplier="0.16" id="RiF-kW-XdV"/>
+                            <constraint firstItem="8zV-dP-gt9" firstAttribute="top" secondItem="Hdj-n5-fbQ" secondAttribute="bottom" id="V9f-zS-DxG"/>
+                            <constraint firstItem="UC6-1F-qeo" firstAttribute="trailing" secondItem="M7y-F7-aKx" secondAttribute="trailingMargin" id="Xbt-fH-bRJ"/>
+                            <constraint firstItem="o4Q-2t-ejf" firstAttribute="trailing" secondItem="YkT-gM-uPq" secondAttribute="trailing" id="fb6-j1-Cst"/>
+                            <constraint firstItem="Hdj-n5-fbQ" firstAttribute="top" secondItem="ZKA-0y-9cH" secondAttribute="bottom" id="hc2-7D-jK0"/>
+                            <constraint firstItem="Hdj-n5-fbQ" firstAttribute="trailing" secondItem="YkT-gM-uPq" secondAttribute="trailing" id="lUA-9C-w7s"/>
+                            <constraint firstItem="o4Q-2t-ejf" firstAttribute="leading" secondItem="YkT-gM-uPq" secondAttribute="leading" id="s5m-kT-l4e"/>
+                            <constraint firstItem="Hdj-n5-fbQ" firstAttribute="height" secondItem="YkT-gM-uPq" secondAttribute="height" multiplier="0.25" constant="-6" id="yLl-cp-tJJ"/>
+                            <constraint firstItem="UC6-1F-qeo" firstAttribute="top" secondItem="Ooi-Su-K0r" secondAttribute="bottom" constant="14" id="zUT-2d-kpQ"/>
+                            <constraint firstItem="YkT-gM-uPq" firstAttribute="centerX" secondItem="UC6-1F-qeo" secondAttribute="centerX" id="zZB-Es-wKm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awF-0t-j5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4032" y="1168"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowLeft" width="10" height="18"/>
         <image name="bathtub" width="96" height="96"/>
         <image name="check" width="92" height="78"/>
+        <image name="human-outline" width="459" height="828"/>
         <image name="shower" width="96" height="96"/>
         <image name="toilet" width="96" height="96"/>
         <image name="toothbrush" width="96" height="96"/>

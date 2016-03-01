@@ -22,15 +22,23 @@ class ImageQuestionViewController: QuestionViewController {
         captions.sortInPlace({ $0.tag < $1.tag })
 
         let options = question!.options
-        for var i = 0; i < images!.count; i++ {
-            let option = options!["option" + String(i + 1)]
+        if options?.count < 3 {
+            images[2].hidden = true
+            captions[2].hidden = true
+            if options?.count == 1 {
+                images[1].hidden = true
+                captions[1].hidden = true
+            }
+        }
+        for var i = 0; i < options?.count; i++ {
+            let option = options?["option" + String(i + 1)]
             let imageView = images[i]
             let captionLabel = captions[i]
             
-            let caption = option!["caption"] as! String
+            let caption = option?["caption"] as! String
             captionLabel.text = caption
             
-            let imageName = option!["image"] as! String
+            let imageName = option?["image"] as! String
             imageView.image = UIImage(named: imageName)
         }
     }
@@ -43,7 +51,7 @@ class ImageQuestionViewController: QuestionViewController {
         }
     }
     
-    override func answerQuestion() {
+    override func answerQuestion() -> Bool {
         super.answerQuestion()
         
         var answers = [Dictionary<String, AnyObject>]()
@@ -73,6 +81,8 @@ class ImageQuestionViewController: QuestionViewController {
         } else {
             CoreDataManager.updateAnswer(answer!, withAnswerDictionary: answerData)
         }
+        
+        return true
     }
     
 }

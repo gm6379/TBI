@@ -20,7 +20,7 @@ class TopConcernsQuestionViewController: QuestionViewController {
         options = question?.options
     }
     
-    override func answerQuestion() {
+    override func answerQuestion() -> Bool {
         super.answerQuestion()
         
         if (selectedConcerns.count == 3) {
@@ -35,8 +35,10 @@ class TopConcernsQuestionViewController: QuestionViewController {
             }
             
             self.delegate?.questionViewController(self, didAnswerQuestion: question!)
+            return true
         } else {
             displayConcernsAmountError()
+            return false
         }
     }
     

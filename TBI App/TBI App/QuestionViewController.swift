@@ -24,8 +24,8 @@ class QuestionViewController: StepViewController {
         titleLabel.text = question!.title
     }
     
-    func answerQuestion() {
-        
+    func answerQuestion() -> Bool {
+        return false
     }
     
 }

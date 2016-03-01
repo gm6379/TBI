@@ -9,7 +9,7 @@
 import UIKit
 
 enum QuestionType {
-    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome, TopAOC, HelpAOC
+    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome; case TopAOC; case HelpAOC; case RehabAreas
 }
 
 class Question: Step {
@@ -47,6 +47,8 @@ class Question: Step {
             return "TopAOC"
         case .HelpAOC:
             return "AOCWhereReceivingHelp"
+        case .RehabAreas:
+            return "AreasWhereReceivingRehabilitation"
         }
     }
 }
@@ -158,5 +160,13 @@ class QuestionHelper: NSObject {
         let concernsQuestion = Question(type: questionType, title: title, options: options, multipleChoice: true)
         
         return concernsQuestion
+    }
+    
+    func rehabilitationAreasQuestion() -> Question {
+        let title = NSLocalizedString("Tap on areas where you are receiving rehabilitation", comment: "")
+        let options = ["option1" : "Vision", "option2" : "Hearing", "option3" : "Speaking", "option4" : "Learning", "option5" : "Memory", "option6" : "Mental Health Problems", "option7" : "Headache", "option8" : "Fatigue", "option9" : "Pain", "option10" : "Behaviour Problems", "option11" : "Cooking Food", "option12" : "Self Care", "option13" : "Sexual Function", "option14" : "Running", "option15" : "Walking", "option16" : "Standing", "option17" : "Balance"]
+
+        let rehabilitationAreasQuestion = Question(type: .RehabAreas, title: title, options: options, multipleChoice: true)
+        return rehabilitationAreasQuestion
     }
 }
