@@ -13,7 +13,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     var pageViewController: UIPageViewController?
     var currentIndex = 0
     var currentSection = 0
-    let numberOfSections = 2
+    let numberOfSections = 3
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var skipButton: UIButton!
@@ -223,11 +223,47 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         }
     }
     
+    func thirdSectionQuestions() -> [StepViewController]? {
+        let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
+        var qVcs = [StepViewController]()
+        
+        if let answer = CoreDataManager.fetchAnswerFromQuestionType("AreasWhereReceivingRehabilitation") {
+            let answerData = NSKeyedUnarchiver.unarchiveObjectWithData(answer.data!)
+            let answers = answerData!["answers"] as! [String]
+
+            let whoOptions = ["option1" : ""]
+            for answer in answers {
+                let whoHelpQuestion = Question(type: QuestionType.WhoHelpRehabAreas, title: "You selected " + answer + "\n Who is helping you?", options: whoOptions, multipleChoice: false)
+                let whoQvc = qVcFactory.whoHelpQuestionViewController()
+                whoQvc.question = whoHelpQuestion
+                whoQvc.delegate = self
+                qVcs.append(whoQvc)
+                
+                let freqHelpQuestion = Question(type: QuestionType.FreqHelpRehabAreas, title: "You selected " + answer + "\n How many times per week?", options: whoOptions, multipleChoice: false)
+                let freqQvc = qVcFactory.freqHelpQuestionViewController()
+                freqQvc.question = freqHelpQuestion
+                freqQvc.delegate = self
+                qVcs.append(freqQvc)
+            }
+            
+            return qVcs
+        }
+        
+        return nil
+    }
+    
     func nextSection() -> [StepViewController]? {
         // load the next section
         if (currentSection != numberOfSections - 1) {
             if (currentSection == 0) {
                 if let questions = secondSectionQuestions() {
+                    if (sVCs.count == 1) {
+                        sVCs.append(questions)
+                    }
+                    return questions
+                }
+            } else {
+                if let questions = thirdSectionQuestions() {
                     if (sVCs.count == 1) {
                         sVCs.append(questions)
                     }

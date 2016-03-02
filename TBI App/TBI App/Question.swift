@@ -9,7 +9,7 @@
 import UIKit
 
 enum QuestionType {
-    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome; case TopAOC; case HelpAOC; case RehabAreas
+    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome; case TopAOC; case HelpAOC; case RehabAreas; case WhoHelpRehabAreas; case FreqHelpRehabAreas
 }
 
 class Question: Step {
@@ -49,6 +49,10 @@ class Question: Step {
             return "AOCWhereReceivingHelp"
         case .RehabAreas:
             return "AreasWhereReceivingRehabilitation"
+        case .WhoHelpRehabAreas:
+            return "WhoHelpPatientWithRehabilitationArea"
+        case .FreqHelpRehabAreas:
+            return "FrequencyOfRehabilitationHelpInSpecifiedArea"
         }
     }
 }

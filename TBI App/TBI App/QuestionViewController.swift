@@ -61,4 +61,14 @@ class QuestionViewControllerFactory: StepViewControllerFactory {
         let rehabilitationQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("RehabiliationQuestionViewController") as! RehabiliationQuestionViewController
         return rehabilitationQuestionViewController
     }
+    
+    func whoHelpQuestionViewController() -> TextStyleAnswerQuestionViewController {
+        let ageQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("WhoHelpRehabQuestionViewController") as! TextStyleAnswerQuestionViewController
+        return ageQuestionViewController
+    }
+    
+    func freqHelpQuestionViewController() -> TextStyleAnswerQuestionViewController {
+        let ageQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("FreqHelpRehabQuestionViewController") as! TextStyleAnswerQuestionViewController
+        return ageQuestionViewController
+    }
 }

@@ -1122,6 +1122,285 @@
             </objects>
             <point key="canvasLocation" x="4045" y="1179"/>
         </scene>
+        <!--Text Style Answer Question View Controller-->
+        <scene sceneID="ekR-KH-xlv">
+            <objects>
+                <viewController storyboardIdentifier="WhoHelpRehabQuestionViewController" id="1X2-QZ-40j" customClass="TextStyleAnswerQuestionViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fsD-aT-JRN"/>
+                        <viewControllerLayoutGuide type="bottom" id="9CL-Y1-LyE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B3j-LB-44P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="cbw-CI-Osn">
+                                <rect key="frame" x="20" y="20" width="560" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="Dd7-1I-L03"/>
+                                </constraints>
+                                <string key="text">You selected Vision
+Who is helping you?</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="FBd-Bm-V68">
+                                <rect key="frame" x="40" y="94" width="520" height="486"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="BE0-Nx-3dR">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAm-Vq-ToS">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="Healthcare Professionals"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="1X2-QZ-40j" eventType="touchUpInside" id="JBT-mf-cjd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eTF-fJ-LbP">
+                                        <rect key="frame" x="0.0" y="102" width="520" height="77"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-UM-bbP">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="Alternative Therapy"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="106"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="1X2-QZ-40j" eventType="touchUpInside" id="128-jj-PSN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="130" width="320" height="106"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="STx-bt-tPM">
+                                        <rect key="frame" x="0.0" y="204" width="520" height="78"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuW-l8-Q1s">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="78"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="Family Members"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="1X2-QZ-40j" eventType="touchUpInside" id="ITx-lT-yNi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="261" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZYg-nw-pvW">
+                                        <rect key="frame" x="0.0" y="307" width="520" height="77"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjV-pd-KeC">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="Support Groups"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="1X2-QZ-40j" eventType="touchUpInside" id="Pk7-f0-E0g"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="261" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="tT3-Ux-qVb">
+                                        <rect key="frame" x="0.0" y="409" width="520" height="77"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrE-y7-ACr">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="Other"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="1X2-QZ-40j" eventType="touchUpInside" id="hRU-WE-ggR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="261" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="40" y="147" width="320" height="366"/>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cbw-CI-Osn" firstAttribute="trailing" secondItem="B3j-LB-44P" secondAttribute="trailingMargin" id="5y5-Gh-Htd"/>
+                            <constraint firstItem="FBd-Bm-V68" firstAttribute="leading" secondItem="B3j-LB-44P" secondAttribute="leadingMargin" constant="20" id="K7b-Lt-Fwc"/>
+                            <constraint firstItem="9CL-Y1-LyE" firstAttribute="top" secondItem="FBd-Bm-V68" secondAttribute="bottom" constant="20" id="USf-KF-dh5"/>
+                            <constraint firstItem="cbw-CI-Osn" firstAttribute="centerX" secondItem="FBd-Bm-V68" secondAttribute="centerX" id="Uch-73-rgh"/>
+                            <constraint firstItem="cbw-CI-Osn" firstAttribute="top" secondItem="fsD-aT-JRN" secondAttribute="bottom" id="Vad-An-NsF"/>
+                            <constraint firstItem="FBd-Bm-V68" firstAttribute="top" secondItem="cbw-CI-Osn" secondAttribute="bottom" constant="1" id="hWs-BG-zZd"/>
+                            <constraint firstItem="cbw-CI-Osn" firstAttribute="leading" secondItem="B3j-LB-44P" secondAttribute="leadingMargin" id="n2A-1F-p2T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="cbw-CI-Osn" id="ZgY-KG-fJe"/>
+                        <outletCollection property="answerButtons" destination="DAm-Vq-ToS" collectionClass="NSMutableArray" id="4VG-ql-bcv"/>
+                        <outletCollection property="answerButtons" destination="wx9-UM-bbP" collectionClass="NSMutableArray" id="5Rt-zn-cf1"/>
+                        <outletCollection property="answerButtons" destination="wuW-l8-Q1s" collectionClass="NSMutableArray" id="Oct-ts-cnM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yuv-BR-NTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4045" y="1849"/>
+        </scene>
+        <!--Text Style Answer Question View Controller-->
+        <scene sceneID="Rbc-Hh-gd4">
+            <objects>
+                <viewController storyboardIdentifier="FreqHelpRehabQuestionViewController" id="bdV-fc-eRh" customClass="TextStyleAnswerQuestionViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oQ3-SR-ulx"/>
+                        <viewControllerLayoutGuide type="bottom" id="h30-aR-pXA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PjG-6P-igL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="tUn-lA-59X">
+                                <rect key="frame" x="20" y="20" width="560" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="wJx-rl-sTq"/>
+                                </constraints>
+                                <string key="text">You selected Vision
+How many times per week?</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-2g-zkW">
+                                <rect key="frame" x="40" y="94" width="520" height="486"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="kPj-d2-Xfe">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="103"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TJ-2b-Muc">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="103"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="1-2"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="bdV-fc-eRh" eventType="touchUpInside" id="Yhv-Cv-3kk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wP1-HT-KvY">
+                                        <rect key="frame" x="0.0" y="128" width="520" height="103"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETu-kq-2GZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="103"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="3-4"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="106"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="bdV-fc-eRh" eventType="touchUpInside" id="bVy-YY-gg6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="130" width="320" height="106"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nYr-Yh-fcr">
+                                        <rect key="frame" x="0.0" y="256" width="520" height="102"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtN-XA-1KE">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="102"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="5-6"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="bdV-fc-eRh" eventType="touchUpInside" id="g85-Iu-Rrd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="261" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="rsl-wM-tqO">
+                                        <rect key="frame" x="0.0" y="383" width="520" height="103"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRK-X7-OWL">
+                                                <rect key="frame" x="0.0" y="0.0" width="520" height="103"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="7"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="answerQuestion:" destination="bdV-fc-eRh" eventType="touchUpInside" id="rzu-bB-ug9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="261" width="320" height="105"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="40" y="147" width="320" height="366"/>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tUn-lA-59X" firstAttribute="trailing" secondItem="PjG-6P-igL" secondAttribute="trailingMargin" id="0dY-CO-Gkz"/>
+                            <constraint firstItem="h30-aR-pXA" firstAttribute="top" secondItem="fMd-2g-zkW" secondAttribute="bottom" constant="20" id="2Q5-xj-jn2"/>
+                            <constraint firstItem="fMd-2g-zkW" firstAttribute="leading" secondItem="PjG-6P-igL" secondAttribute="leadingMargin" constant="20" id="5D4-3Z-RWV"/>
+                            <constraint firstItem="tUn-lA-59X" firstAttribute="leading" secondItem="PjG-6P-igL" secondAttribute="leadingMargin" id="650-pg-fuQ"/>
+                            <constraint firstItem="tUn-lA-59X" firstAttribute="top" secondItem="oQ3-SR-ulx" secondAttribute="bottom" id="hGT-RI-1Wq"/>
+                            <constraint firstItem="tUn-lA-59X" firstAttribute="centerX" secondItem="fMd-2g-zkW" secondAttribute="centerX" id="qJG-jv-iss"/>
+                            <constraint firstItem="fMd-2g-zkW" firstAttribute="top" secondItem="tUn-lA-59X" secondAttribute="bottom" constant="1" id="zqN-dl-gRe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="tUn-lA-59X" id="RGe-bE-Vfb"/>
+                        <outletCollection property="answerButtons" destination="2TJ-2b-Muc" collectionClass="NSMutableArray" id="KI7-zk-Op5"/>
+                        <outletCollection property="answerButtons" destination="ETu-kq-2GZ" collectionClass="NSMutableArray" id="amZ-8n-QMQ"/>
+                        <outletCollection property="answerButtons" destination="gtN-XA-1KE" collectionClass="NSMutableArray" id="w64-V9-fj0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0UV-sP-2Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4731" y="1849"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowLeft" width="10" height="18"/>
