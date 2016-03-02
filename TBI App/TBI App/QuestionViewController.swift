@@ -56,4 +56,9 @@ class QuestionViewControllerFactory: StepViewControllerFactory {
         let topConcernsQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("TopConcernsQuestionViewController") as! TopConcernsQuestionViewController
         return topConcernsQuestionViewController
     }
+    
+    func rehabilitationQuestionViewController() -> QuestionViewController {
+        let rehabilitationQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("RehabiliationQuestionViewController") as! RehabiliationQuestionViewController
+        return rehabilitationQuestionViewController
+    }
 }

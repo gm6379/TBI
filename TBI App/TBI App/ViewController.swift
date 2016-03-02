@@ -199,11 +199,14 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 questions.append(helper.generatedConcernsQuestion(areaOfConcernAnswers, title: NSLocalizedString("Tap on your top 3 areas of concern", comment: ""), questionType: QuestionType.TopAOC)!)
                 qVcs.append(qVcFactory.topConcernsQuestionViewController())
             }
-            if let question = helpAOCQuestion() {
+            if let question = helper.helpAOCQuestion() {
                 questions.append(question)
                 qVcs.append(qVcFactory.threeImageQuestionViewController())
             }
         }
+        
+        questions.append(helper.rehabilitationAreasQuestion())
+        qVcs.append(qVcFactory.rehabilitationQuestionViewController())
         
         if (questions.count > 0) {
             for var i = 0; i < questions.count; i++ {
@@ -218,21 +221,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         } else {
             return nil
         }
-    }
-    
-    func helpAOCQuestion() -> Question? {
-        var helpAOCQuestion: Question?
-        let helpAOCTitle = NSLocalizedString("Tap concerns where you are receiving help", comment: "")
-        if let answer = CoreDataManager.fetchTopAreasOfConcernAnswer() {
-            helpAOCQuestion = QuestionHelper().generatedConcernsQuestion([answer], title: helpAOCTitle, questionType: .HelpAOC)
-        } else { // the user had <=3 initial concerns
-            // iterate through the area of concern answers and collect into an array
-            if let answers = CoreDataManager.fetchAreaOfConcernAnswers() {
-                helpAOCQuestion = QuestionHelper().generatedConcernsQuestion(answers, title: helpAOCTitle, questionType: .HelpAOC)
-            }
-        }
-        
-        return helpAOCQuestion
     }
     
     func nextSection() -> [StepViewController]? {
@@ -283,7 +271,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     
     func questionViewController(viewController: QuestionViewController, didAnswerQuestion question: Question) {
         if (question.type == QuestionType.TopAOC) {
-            let question = helpAOCQuestion()
+            let helper = QuestionHelper()
+            let question = helper.helpAOCQuestion()
             let nextQVC = currentSVCs[currentIndex + 1] as! QuestionViewController
             nextQVC.question = question
         } else {

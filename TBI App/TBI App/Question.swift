@@ -162,9 +162,24 @@ class QuestionHelper: NSObject {
         return concernsQuestion
     }
     
+    func helpAOCQuestion() -> Question? {
+        var helpAOCQuestion: Question?
+        let helpAOCTitle = NSLocalizedString("Tap concerns where you are receiving help", comment: "")
+        if let answer = CoreDataManager.fetchTopAreasOfConcernAnswer() {
+            helpAOCQuestion = generatedConcernsQuestion([answer], title: helpAOCTitle, questionType: .HelpAOC)
+        } else { // the user had <=3 initial concerns
+            // iterate through the area of concern answers and collect into an array
+            if let answers = CoreDataManager.fetchAreaOfConcernAnswers() {
+                helpAOCQuestion = generatedConcernsQuestion(answers, title: helpAOCTitle, questionType: .HelpAOC)
+            }
+        }
+        
+        return helpAOCQuestion
+    }
+    
     func rehabilitationAreasQuestion() -> Question {
         let title = NSLocalizedString("Tap on areas where you are receiving rehabilitation", comment: "")
-        let options = ["option1" : "Vision", "option2" : "Hearing", "option3" : "Speaking", "option4" : "Learning", "option5" : "Memory", "option6" : "Mental Health Problems", "option7" : "Headache", "option8" : "Fatigue", "option9" : "Pain", "option10" : "Behaviour Problems", "option11" : "Cooking Food", "option12" : "Self Care", "option13" : "Sexual Function", "option14" : "Running", "option15" : "Walking", "option16" : "Standing", "option17" : "Balance"]
+        let options = ["option1" : "Vision", "option2" : "Hearing", "option3" : "Speaking", "option4" : "Learning or Memory", "option5" : "Mental Health", "option6" : "Headache", "option7" : "Fatigue", "option8" : "Pain", "option9" : "Behaviour Problems", "option10" : "Cooking Food", "option11" : "Self Care", "option12" : "Sexual Function", "option13" : "Running", "option14" : "Walking", "option15" : "Standing", "option16" : "Balance"]
 
         let rehabilitationAreasQuestion = Question(type: .RehabAreas, title: title, options: options, multipleChoice: true)
         return rehabilitationAreasQuestion
