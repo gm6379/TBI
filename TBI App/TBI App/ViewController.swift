@@ -80,10 +80,21 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 currentIndex = -1
                 moveToNextStep()
             } else { // user has completed the survey
-                // remove all view controllers
-                
                 // return to login screen
+                let loginVC = sVCs[0][0]
+                pageViewController?.setViewControllers([loginVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
                 
+                // remove all view controllers
+                sVCs.removeAll()
+                
+                // load new view controllers
+                loadFirstSectionQuestions()
+                
+                currentSection = 0
+                currentIndex = 0
+                
+                backArrow.hidden = true
+                backButton.enabled = false
             }
         }
     }
