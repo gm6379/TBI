@@ -79,6 +79,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 currentSection++
                 currentIndex = -1
                 moveToNextStep()
+            } else { // user has completed the survey
+                // remove all view controllers
+                
+                // return to login screen
+                
             }
         }
     }
@@ -199,9 +204,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 questions.append(helper.generatedConcernsQuestion(areaOfConcernAnswers, title: NSLocalizedString("Tap on your top 3 areas of concern", comment: ""), questionType: QuestionType.TopAOC)!)
                 qVcs.append(qVcFactory.topConcernsQuestionViewController())
             }
-            if let question = helper.helpAOCQuestion() {
-                questions.append(question)
-                qVcs.append(qVcFactory.threeImageQuestionViewController())
+            if (numConcerns > 0) {
+                if let question = helper.helpAOCQuestion() {
+                    questions.append(question)
+                    qVcs.append(qVcFactory.threeImageQuestionViewController())
+                }
             }
         }
         
@@ -224,6 +231,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     }
     
     func thirdSectionQuestions() -> [StepViewController]? {
+        let helper = QuestionHelper()
+        
         let qVcFactory = QuestionViewControllerFactory(storyboard: storyboard!)
         var qVcs = [StepViewController]()
         
@@ -231,25 +240,28 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
             let answerData = NSKeyedUnarchiver.unarchiveObjectWithData(answer.data!)
             let answers = answerData!["answers"] as! [String]
 
-            let whoOptions = ["option1" : ""]
             for answer in answers {
-                let whoHelpQuestion = Question(type: QuestionType.WhoHelpRehabAreas, title: "You selected " + answer + "\n Who is helping you?", options: whoOptions, multipleChoice: false)
+                let whoHelpQuestion = helper.whoHelpRehabAreaQuestion(answer)
                 let whoQvc = qVcFactory.whoHelpQuestionViewController()
                 whoQvc.question = whoHelpQuestion
                 whoQvc.delegate = self
                 qVcs.append(whoQvc)
                 
-                let freqHelpQuestion = Question(type: QuestionType.FreqHelpRehabAreas, title: "You selected " + answer + "\n How many times per week?", options: whoOptions, multipleChoice: false)
+                let freqHelpQuestion = helper.freqHelpRehabQuestion(answer)
                 let freqQvc = qVcFactory.freqHelpQuestionViewController()
                 freqQvc.question = freqHelpQuestion
                 freqQvc.delegate = self
                 qVcs.append(freqQvc)
             }
             
-            return qVcs
         }
         
-        return nil
+        let finishedVC = qVcFactory.finishedSurveyViewController()
+        finishedVC.question = helper.completedSurveyQuestion()
+        finishedVC.delegate = self
+        qVcs.append(finishedVC)
+        
+        return qVcs
     }
     
     func nextSection() -> [StepViewController]? {
@@ -264,7 +276,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 }
             } else {
                 if let questions = thirdSectionQuestions() {
-                    if (sVCs.count == 1) {
+                    if (sVCs.count == 3) {
+                        sVCs.removeLast()
+                        sVCs.append(questions)
+                    } else {
                         sVCs.append(questions)
                     }
                     return questions
@@ -273,6 +288,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         }
         
         return nil
+    }
+    
+    func finishSurvey() {
+        
     }
     
     @IBAction func exportData(sender: UIButton) {

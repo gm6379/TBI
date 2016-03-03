@@ -9,7 +9,7 @@
 import UIKit
 
 enum QuestionType {
-    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome; case TopAOC; case HelpAOC; case RehabAreas; case WhoHelpRehabAreas; case FreqHelpRehabAreas
+    case Gender; case Age; case AOCHygiene; case AOCComms; case AOCMobility; case AOCHome; case AOCHealth; case AOCSndHome; case TopAOC; case HelpAOC; case RehabAreas; case WhoHelpRehabAreas; case FreqHelpRehabAreas; case Completed
 }
 
 class Question: Step {
@@ -53,6 +53,8 @@ class Question: Step {
             return "WhoHelpPatientWithRehabilitationArea"
         case .FreqHelpRehabAreas:
             return "FrequencyOfRehabilitationHelpInSpecifiedArea"
+        case .Completed:
+            return "CompletedSurvey"
         }
     }
 }
@@ -69,7 +71,7 @@ class QuestionHelper: NSObject {
     
     func ageQuestion() -> Question {
         let title = NSLocalizedString("What is your age?", comment: "")
-        let options = ["option1" : "18-24", "option2" : "25-34", "option3" : "35-44", "option4" : "45-54", "option5" : "55-64", "option6" : "65+", ]
+        let options = ["option1" : NSLocalizedString("18-24", comment: ""), "option2" : NSLocalizedString("25-34", comment: ""), "option3" : NSLocalizedString("35-44", comment: ""), "option4" : NSLocalizedString("45-54", comment: ""), "option5" : NSLocalizedString("55-64", comment: ""), "option6" : NSLocalizedString("65+", comment: "")]
         
         let ageQuestion = Question(type: QuestionType.Age, title: title, options: options, multipleChoice: false)
         return ageQuestion
@@ -183,9 +185,33 @@ class QuestionHelper: NSObject {
     
     func rehabilitationAreasQuestion() -> Question {
         let title = NSLocalizedString("Tap on areas where you are receiving rehabilitation", comment: "")
-        let options = ["option1" : "Vision", "option2" : "Hearing", "option3" : "Speaking", "option4" : "Learning or Memory", "option5" : "Mental Health", "option6" : "Headache", "option7" : "Fatigue", "option8" : "Pain", "option9" : "Behaviour Problems", "option10" : "Cooking Food", "option11" : "Self Care", "option12" : "Sexual Function", "option13" : "Running", "option14" : "Walking", "option15" : "Standing", "option16" : "Balance"]
+        let options = ["option1" : NSLocalizedString("Vision", comment: ""), "option2" : NSLocalizedString("Hearing", comment: ""), "option3" : NSLocalizedString("Speaking", comment: ""), "option4" : NSLocalizedString("Learning or Memory", comment: ""), "option5" : NSLocalizedString("Mental Health", comment: ""), "option6" : NSLocalizedString("Headache", comment: ""), "option7" : NSLocalizedString("Fatigue", comment: ""), "option8" : NSLocalizedString("Pain", comment: ""), "option9" : NSLocalizedString("Behaviour Problems", comment: ""), "option10" : NSLocalizedString("Cooking Food", comment: ""), "option11" : NSLocalizedString("Self Care", comment: ""), "option12" : NSLocalizedString("Sexual Function", comment:""), "option13" : NSLocalizedString("Running", comment: ""), "option14" : NSLocalizedString("Walking", comment: ""), "option15" : NSLocalizedString("Standing", comment: ""), "option16" : NSLocalizedString("Balance", comment: "")]
 
         let rehabilitationAreasQuestion = Question(type: .RehabAreas, title: title, options: options, multipleChoice: true)
         return rehabilitationAreasQuestion
+    }
+    
+    func whoHelpRehabAreaQuestion(area: String) -> Question {
+        let title = NSLocalizedString("You selected " + area + "\n Who is helping you?", comment: "")
+        let options = ["option1" : NSLocalizedString("Health Professionals", comment: ""), "option2" : NSLocalizedString("Alternative Therapy", comment: ""), "option3" : NSLocalizedString("Family Members", comment: ""), "option4" : NSLocalizedString("Support Groups", comment: ""), "option5" : NSLocalizedString("Other", comment: "")]
+        
+        let whoHelpQuestion = Question(type: QuestionType.WhoHelpRehabAreas, title: title, options: options, multipleChoice: false)
+        return whoHelpQuestion
+    }
+    
+    func freqHelpRehabQuestion(area: String) -> Question {
+        let title = NSLocalizedString("You selected " + area + "\n How many times per week?", comment: "")
+        let options = ["option1" : NSLocalizedString("1-2", comment: ""), "option2" : NSLocalizedString("3-4", comment: ""), "option3" : NSLocalizedString("5-6", comment: ""), "option4" : NSLocalizedString("7", comment: "")]
+        
+        let freqHelpQuestion = Question(type: QuestionType.FreqHelpRehabAreas, title: title, options: options, multipleChoice: false)
+        return freqHelpQuestion
+    }
+    
+    func completedSurveyQuestion() -> Question {
+        let title = NSLocalizedString("Thank you for completing this survey!", comment: "")
+        let options = ["option1" : NSLocalizedString("Tap here to finish", comment: "")]
+        
+        let completedSurveyQuestion = Question(type: QuestionType.Completed, title: title, options: options, multipleChoice: false)
+        return completedSurveyQuestion
     }
 }

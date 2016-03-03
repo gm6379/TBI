@@ -25,8 +25,32 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
     
     @IBAction func answerQuestion(button: UIButton) {
         let answerText = button.titleLabel?.text
+        if (answerText == NSLocalizedString("Other", comment: "")) {
+            
+        } else {
+            answer(answerText!)
+        }
+    }
+    
+    func promptOtherDialog() {
+        let alert = UIAlertController(title: "Confirm answer", message: "Please specify your answer:", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            
+        }
+        
+        alert.addAction(UIAlertAction(title: "Confirm", style: UIAlertActionStyle.Default, handler: { (_) -> Void in
+            let answerTextField = alert.textFields![0] as UITextField
+            if (answerTextField.text != nil) {
+                self.answer(answerTextField.text!)
+            } else {
+                self.answer(NSLocalizedString("Other", comment: ""))
+            }
+        }))
+    }
+    
+    func answer(answerText: String) {
         let questionType = question!.readableType()
-        let answerData: Dictionary<String, AnyObject> = ["questionType" : question!.readableType(), "answers" : ["answerText" : answerText!]]
+        let answerData: Dictionary<String, AnyObject> = ["questionType" : question!.readableType(), "answers" : ["answerText" : answerText]]
         
         let answer = CoreDataManager.fetchAnswerFromQuestionType(questionType)
         if (answer == nil) {

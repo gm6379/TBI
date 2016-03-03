@@ -1401,6 +1401,57 @@ How many times per week?</string>
             </objects>
             <point key="canvasLocation" x="4731" y="1849"/>
         </scene>
+        <!--Text Style Answer Question View Controller-->
+        <scene sceneID="0Sx-4R-YOv">
+            <objects>
+                <viewController storyboardIdentifier="FinishedQuestionViewController" id="IgV-3V-43J" customClass="TextStyleAnswerQuestionViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Csm-PO-bFV"/>
+                        <viewControllerLayoutGuide type="bottom" id="sLI-PQ-ReJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hMh-Ze-yuN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for completing this survey!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Tt0-E8-Va1">
+                                <rect key="frame" x="20" y="20" width="560" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="RKQ-IR-eme"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDF-fd-VLz">
+                                <rect key="frame" x="187" y="245" width="227" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Cc6-vV-ECo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Tap here to finish"/>
+                                <connections>
+                                    <action selector="answerQuestion:" destination="IgV-3V-43J" eventType="touchUpInside" id="NVh-oR-NwB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tt0-E8-Va1" firstAttribute="leading" secondItem="hMh-Ze-yuN" secondAttribute="leadingMargin" id="7OF-e6-peT"/>
+                            <constraint firstItem="qDF-fd-VLz" firstAttribute="centerY" secondItem="hMh-Ze-yuN" secondAttribute="centerY" id="9dp-ZY-BLv"/>
+                            <constraint firstItem="Tt0-E8-Va1" firstAttribute="top" secondItem="Csm-PO-bFV" secondAttribute="bottom" id="C9W-jj-etR"/>
+                            <constraint firstItem="qDF-fd-VLz" firstAttribute="centerX" secondItem="hMh-Ze-yuN" secondAttribute="centerX" id="U0q-jH-iPY"/>
+                            <constraint firstItem="Tt0-E8-Va1" firstAttribute="trailing" secondItem="hMh-Ze-yuN" secondAttribute="trailingMargin" id="yLV-UF-GRy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="Tt0-E8-Va1" id="mEG-dr-qQ7"/>
+                        <outletCollection property="answerButtons" destination="qDF-fd-VLz" collectionClass="NSMutableArray" id="mpS-LO-lWS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U95-EN-6Ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5443" y="1843"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowLeft" width="10" height="18"/>

@@ -71,4 +71,9 @@ class QuestionViewControllerFactory: StepViewControllerFactory {
         let ageQuestionViewController = storyboard?.instantiateViewControllerWithIdentifier("FreqHelpRehabQuestionViewController") as! TextStyleAnswerQuestionViewController
         return ageQuestionViewController
     }
+    
+    func finishedSurveyViewController() -> TextStyleAnswerQuestionViewController {
+        let finishedSurveyViewController = storyboard?.instantiateViewControllerWithIdentifier("FinishedQuestionViewController") as! TextStyleAnswerQuestionViewController
+        return finishedSurveyViewController
+    }
 }
