@@ -413,6 +413,24 @@
             </objects>
             <point key="canvasLocation" x="2036" y="1168"/>
         </scene>
+        <!--Setup View Controller-->
+        <scene sceneID="BwF-H1-yqG">
+            <objects>
+                <viewController storyboardIdentifier="SetupViewController" id="vBA-aS-Tze" customClass="SetupViewController" customModule="TBI_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h4R-dd-B4P"/>
+                        <viewControllerLayoutGuide type="bottom" id="zf8-Yw-btP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uhk-QX-S3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJb-NF-JbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="-185"/>
+        </scene>
         <!--Image Question View Controller-->
         <scene sceneID="YAT-Av-oeq">
             <objects>

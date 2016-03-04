@@ -135,7 +135,7 @@ class CoreDataManager: NSObject {
     
     // MARK: - Export methods
     
-    class func export() {
+    class func export(authorizer: GTMOAuth2Authentication) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
         var csvString = "id, type, user, dateCreated, answer(s)\n"
@@ -155,7 +155,7 @@ class CoreDataManager: NSObject {
                 
                 let answers = NSMutableArray()
                 for answer in rawAnswers {
-                    if(answer is String) {
+                    if (answer is String) {
                         answers.addObject(answer as! String)
                     } else {
                         answers.addObject(answer["caption"] as! String)
@@ -166,16 +166,13 @@ class CoreDataManager: NSObject {
                 csvString += identifier! + ", " + questionType +  ", " + user! + ", " + dateCreated! + ", " + answersStr + "\n"
             }
             
-            let fileManager = NSFileManager.defaultManager()
-            
-            //create an array and store result of our search for the documents directory in it
-            let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-            
-            let fullPath = documentsDirectory.stringByAppendingString("/data.csv")
-            fileManager.createFileAtPath(fullPath, contents: csvString.dataUsingEncoding(NSUTF8StringEncoding), attributes: nil)
-
+            let drive = DriveNetworkInterface(authorizer: authorizer)
+            drive.saveFile(csvString)
         } catch {
             print(error)
         }
     }
+    
+    
+    
 }

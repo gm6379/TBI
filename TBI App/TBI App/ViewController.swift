@@ -301,13 +301,18 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         return nil
     }
     
-    func finishSurvey() {
-        
-    }
-    
     @IBAction func exportData(sender: UIButton) {
-        CoreDataManager.export()
-    }
+        let service = GTLServiceDrive()
+        service.authorizer = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(Constants.kKeychainItemName, clientID: Constants.kClientID, clientSecret: nil)
+        
+        if let authorizer = service.authorizer,
+            canAuth = authorizer.canAuthorize where canAuth {
+                CoreDataManager.export(authorizer as! GTMOAuth2Authentication)
+        } else {
+            let setupVC = self.storyboard?.instantiateViewControllerWithIdentifier("SetupViewController") as! SetupViewController
+            self.presentViewController(setupVC, animated: false, completion: nil)
+        }
+    }    
     
     // MARK: - UIPageViewControllerDelegate
     
