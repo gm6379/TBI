@@ -50,7 +50,7 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
     
     func answer(answerText: String) {
         let questionType = question!.readableType()
-        let answerData: Dictionary<String, AnyObject> = ["questionType" : question!.readableType(), "answers" : ["answerText" : answerText]]
+        let answerData: Dictionary<String, AnyObject> = ["questionType" : question!.readableType(), "answers" : [answerText]]
         
         let answer = CoreDataManager.fetchAnswerFromQuestionType(questionType)
         if (answer == nil) {

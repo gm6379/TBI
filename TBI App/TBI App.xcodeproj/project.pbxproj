@@ -12,8 +12,6 @@
 		A9441F341C7743840084ADF7 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9441F321C7743840084ADF7 /* Answer.swift */; };
 		A94F13351C7DCEE400B18546 /* TopConcernCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94F13341C7DCEE400B18546 /* TopConcernCollectionViewCell.swift */; };
 		A9569DF21C5E2AA3001F4C3F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9569DF11C5E2AA3001F4C3F /* Question.swift */; };
-		A957599E1C566B93005634A1 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */; };
-		A957599F1C566B93005634A1 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A95759A41C56826F005634A1 /* ImageQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95759A31C56826F005634A1 /* ImageQuestionViewController.swift */; };
 		A95759A61C568B3D005634A1 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95759A51C568B3D005634A1 /* QuestionViewController.swift */; };
 		A95B7BE21C5E6B3B004C8EC3 /* TextStyleAnswerQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B7BE11C5E6B3B004C8EC3 /* TextStyleAnswerQuestionViewController.swift */; };
@@ -38,30 +36,6 @@
 		A9BD0A591C6B5EAA00B1AE59 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BD0A581C6B5EAA00B1AE59 /* SFHFKeychainUtils.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A95759A01C566B93005634A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
-		A95C1C031C4ED9F80063CED5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B183A5951A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
-		A95C1C051C4ED9F80063CED5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
-			remoteInfo = ResearchKitTests;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		A95759A21C566B93005634A1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -69,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A957599F1C566B93005634A1 /* ResearchKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,7 +66,6 @@
 		A95C1BF11C4ECFB30063CED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A95C1BF41C4ECFB30063CED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A95C1BF61C4ECFB30063CED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../../ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		A96C3C1D1C7358FA000D7184 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A96C3C1F1C735B67000D7184 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A96C3C211C736334000D7184 /* Session+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Session+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -116,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A957599E1C566B93005634A1 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				A95C1BE61C4ECFB30063CED5 /* TBI App */,
-				A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */,
 				A95C1BE51C4ECFB30063CED5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,15 +140,6 @@
 			path = "TBI App";
 			sourceTree = "<group>";
 		};
-		A95C1BFE1C4ED9F70063CED5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */,
-				A95C1C061C4ED9F80063CED5 /* ResearchKitTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A96C3C101C73481D000D7184 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +178,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A95759A11C566B93005634A1 /* PBXTargetDependency */,
 			);
 			name = "TBI App";
 			productName = "TBI App";
@@ -250,35 +210,12 @@
 			mainGroup = A95C1BDB1C4ECFB30063CED5;
 			productRefGroup = A95C1BE51C4ECFB30063CED5 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = A95C1BFE1C4ED9F70063CED5 /* Products */;
-					ProjectRef = A95C1BFD1C4ED9F70063CED5 /* ResearchKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				A95C1BE31C4ECFB30063CED5 /* TBI App */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		A95C1C041C4ED9F80063CED5 /* ResearchKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ResearchKit.framework;
-			remoteRef = A95C1C031C4ED9F80063CED5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A95C1C061C4ED9F80063CED5 /* ResearchKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ResearchKitTests.xctest;
-			remoteRef = A95C1C051C4ED9F80063CED5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A95C1BE21C4ECFB30063CED5 /* Resources */ = {
@@ -326,14 +263,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A95759A11C566B93005634A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ResearchKit;
-			targetProxy = A95759A01C566B93005634A1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A95C1BEB1C4ECFB30063CED5 /* Main.storyboard */ = {

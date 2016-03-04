@@ -138,6 +138,7 @@ class CoreDataManager: NSObject {
     class func export() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
+        var csvString = "id, type, user, dateCreated, answer(s)\n"
         let request = NSFetchRequest(entityName: "Answer")
         do {
             let results = try appDelegate.managedObjectContext.executeFetchRequest(request)
@@ -148,10 +149,31 @@ class CoreDataManager: NSObject {
                 let dateCreated = answer.dateCreated?.description
                 
                 let answerData = NSKeyedUnarchiver.unarchiveObjectWithData(answer.data!)
+                let rawAnswers = answerData?.objectForKey("answers") as! [AnyObject]
+
+                let questionType = answerData?.objectForKey("questionType") as! String
                 
-                let data: Dictionary<String, AnyObject> = ["identifier" : identifier!, "answerData" : answerData!, "user" : user!, "dateCreated" : dateCreated!]
-                print(data)
+                let answers = NSMutableArray()
+                for answer in rawAnswers {
+                    if(answer is String) {
+                        answers.addObject(answer as! String)
+                    } else {
+                        answers.addObject(answer["caption"] as! String)
+                    }
+                }
+                let answersStr = answers.componentsJoinedByString("; ")
+                
+                csvString += identifier! + ", " + questionType +  ", " + user! + ", " + dateCreated! + ", " + answersStr + "\n"
             }
+            
+            let fileManager = NSFileManager.defaultManager()
+            
+            //create an array and store result of our search for the documents directory in it
+            let documentsDirectory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+            
+            let fullPath = documentsDirectory.stringByAppendingString("/data.csv")
+            fileManager.createFileAtPath(fullPath, contents: csvString.dataUsingEncoding(NSUTF8StringEncoding), attributes: nil)
+
         } catch {
             print(error)
         }

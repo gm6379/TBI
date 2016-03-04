@@ -34,7 +34,7 @@ class Question: Step {
         case .AOCHygiene:
             return "AreasOfConcernHygiene"
         case .AOCComms:
-            return "AreasOfConcernCommuniation"
+            return "AreasOfConcernCommunication"
         case .AOCMobility:
             return "AreasOfConcernMobility"
         case .AOCHome:
