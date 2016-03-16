@@ -164,6 +164,7 @@
                         <outlet property="backArrow" destination="xUO-um-r0l" id="XZt-09-Xrw"/>
                         <outlet property="backButton" destination="vHT-Te-pqD" id="wvZ-Kw-Niq"/>
                         <outlet property="containerView" destination="AKq-zd-Ray" id="PHT-92-faf"/>
+                        <outlet property="exportButton" destination="Q8s-hF-0bT" id="fjj-l3-5mh"/>
                         <outlet property="nextButton" destination="ycR-EN-wBZ" id="2s6-MC-r1w"/>
                         <outlet property="skipButton" destination="hrn-Il-BPB" id="CIg-4Z-2Sb"/>
                     </connections>

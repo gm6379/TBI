@@ -21,6 +21,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     @IBOutlet weak var backArrow: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var exportButton: UIButton!
+    
     var sVCs = [[StepViewController]]()
     var currentSVCs = [StepViewController]()
     
@@ -93,6 +95,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 currentSection = 0
                 currentIndex = 0
                 
+                exportButton.hidden = false
                 backArrow.hidden = true
                 backButton.enabled = false
             }
@@ -112,6 +115,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 nextButton.hidden = true
             }
         }
+        exportButton.hidden = true
         backArrow.hidden = false
         backButton.enabled = true
     }
@@ -146,6 +150,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         }
         
         if (currentSection == 0 && currentIndex == 0) {
+            exportButton.hidden = false
             backArrow.hidden = true
             backButton.enabled = false
         }
