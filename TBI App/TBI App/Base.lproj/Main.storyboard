@@ -651,10 +651,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your top 3 areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="02y-sk-zNl">
-                                <rect key="frame" x="20" y="40" width="560" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your top 3 areas of concern" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="02y-sk-zNl">
+                                <rect key="frame" x="20" y="20" width="560" height="63"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="Mls-zm-ubl"/>
+                                    <constraint firstAttribute="height" constant="63" id="Mls-zm-ubl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -711,13 +711,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="02y-sk-zNl" firstAttribute="top" secondItem="mAP-WT-n86" secondAttribute="bottom" constant="20" id="EYQ-aW-lSY"/>
+                            <constraint firstItem="02y-sk-zNl" firstAttribute="top" secondItem="mAP-WT-n86" secondAttribute="bottom" id="EYQ-aW-lSY"/>
                             <constraint firstItem="5hy-T0-nvi" firstAttribute="leading" secondItem="02y-sk-zNl" secondAttribute="leading" id="Nnh-8q-ddW"/>
                             <constraint firstItem="5hy-T0-nvi" firstAttribute="trailing" secondItem="02y-sk-zNl" secondAttribute="trailing" id="Pif-Tk-Nb6"/>
                             <constraint firstAttribute="bottom" secondItem="5hy-T0-nvi" secondAttribute="bottom" constant="20" symbolic="YES" id="Uen-eh-nPY"/>
                             <constraint firstItem="02y-sk-zNl" firstAttribute="trailing" secondItem="1rr-nP-HOQ" secondAttribute="trailingMargin" id="W4n-wY-63Y"/>
                             <constraint firstItem="02y-sk-zNl" firstAttribute="leading" secondItem="1rr-nP-HOQ" secondAttribute="leadingMargin" id="f2d-se-Aib"/>
-                            <constraint firstItem="5hy-T0-nvi" firstAttribute="top" secondItem="02y-sk-zNl" secondAttribute="bottom" constant="17" id="oTT-3W-Wuh"/>
+                            <constraint firstItem="5hy-T0-nvi" firstAttribute="top" secondItem="02y-sk-zNl" secondAttribute="bottom" constant="8" id="oTT-3W-Wuh"/>
                         </constraints>
                     </view>
                     <connections>
@@ -740,10 +740,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your areas of concern" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-uY-l83">
-                                <rect key="frame" x="20" y="40" width="560" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on your areas of concern" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-uY-l83">
+                                <rect key="frame" x="20" y="28" width="560" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ejh-rH-Ml2"/>
+                                    <constraint firstAttribute="height" constant="61" id="ejh-rH-Ml2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -851,7 +851,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="NFt-XR-1CV" firstAttribute="bottom" secondItem="JrV-LX-91z" secondAttribute="bottom" constant="-24" id="3rV-TK-W0z"/>
-                            <constraint firstItem="cYn-uY-l83" firstAttribute="top" secondItem="zIi-jL-8YB" secondAttribute="bottom" constant="20" id="Asj-ea-KQf"/>
+                            <constraint firstItem="cYn-uY-l83" firstAttribute="top" secondItem="zIi-jL-8YB" secondAttribute="bottom" constant="8" id="Asj-ea-KQf"/>
                             <constraint firstItem="EaM-q9-JBP" firstAttribute="centerY" secondItem="qaO-E9-4az" secondAttribute="centerY" constant="-36" id="Boj-1c-L8T"/>
                             <constraint firstItem="id5-Hp-A8r" firstAttribute="top" secondItem="EaM-q9-JBP" secondAttribute="top" id="HAt-oD-d3B"/>
                             <constraint firstItem="EaM-q9-JBP" firstAttribute="centerX" secondItem="qaO-E9-4az" secondAttribute="centerX" constant="-45" id="HJY-3D-jeF"/>
@@ -859,7 +859,7 @@
                             <constraint firstItem="JrV-LX-91z" firstAttribute="leading" secondItem="qaO-E9-4az" secondAttribute="leadingMargin" constant="12" id="Npp-gW-J44"/>
                             <constraint firstItem="id5-Hp-A8r" firstAttribute="trailing" secondItem="JrV-LX-91z" secondAttribute="trailing" id="bSX-Fm-lls"/>
                             <constraint firstItem="NFt-XR-1CV" firstAttribute="centerX" secondItem="qaO-E9-4az" secondAttribute="centerX" constant="44" id="dkG-ih-P8Y"/>
-                            <constraint firstItem="JrV-LX-91z" firstAttribute="top" secondItem="cYn-uY-l83" secondAttribute="bottom" constant="20" id="nOA-Bc-bBB"/>
+                            <constraint firstItem="JrV-LX-91z" firstAttribute="top" secondItem="cYn-uY-l83" secondAttribute="bottom" constant="5" id="nOA-Bc-bBB"/>
                             <constraint firstItem="cYn-uY-l83" firstAttribute="leading" secondItem="qaO-E9-4az" secondAttribute="leadingMargin" id="qbg-S9-AQb"/>
                             <constraint firstItem="cYn-uY-l83" firstAttribute="trailing" secondItem="qaO-E9-4az" secondAttribute="trailingMargin" id="s8p-PR-glA"/>
                             <constraint firstItem="EcR-iD-oqe" firstAttribute="top" secondItem="JrV-LX-91z" secondAttribute="bottom" constant="20" id="zCg-BW-AvB"/>
@@ -1171,7 +1171,7 @@ Who is helping you?</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAm-Vq-ToS">
                                                 <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <state key="normal" title="Healthcare Professionals"/>
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
@@ -1190,7 +1190,7 @@ Who is helping you?</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-UM-bbP">
                                                 <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <state key="normal" title="Alternative Therapy"/>
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="106"/>
@@ -1209,7 +1209,7 @@ Who is helping you?</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuW-l8-Q1s">
                                                 <rect key="frame" x="0.0" y="0.0" width="520" height="78"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <state key="normal" title="Family Members"/>
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
@@ -1228,7 +1228,7 @@ Who is helping you?</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjV-pd-KeC">
                                                 <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <state key="normal" title="Support Groups"/>
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
@@ -1247,7 +1247,7 @@ Who is helping you?</string>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrE-y7-ACr">
                                                 <rect key="frame" x="0.0" y="0.0" width="520" height="77"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <state key="normal" title="Other"/>
                                                 <variation key="widthClass=compact" misplaced="YES">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="105"/>
