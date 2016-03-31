@@ -20,6 +20,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
     
     @IBOutlet weak var backArrow: UIImageView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var backLabel: UILabel!
     
     @IBOutlet weak var exportButton: UIButton!
     
@@ -97,6 +98,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
                 
                 exportButton.hidden = false
                 backArrow.hidden = true
+                skipButton.hidden = true
+                backLabel.hidden = true
                 backButton.enabled = false
             }
         }
@@ -117,6 +120,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         }
         exportButton.hidden = true
         backArrow.hidden = false
+        skipButton.hidden = false
+        backLabel.hidden = false
         backButton.enabled = true
     }
     
@@ -152,7 +157,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, Question
         if (currentSection == 0 && currentIndex == 0) {
             exportButton.hidden = false
             backArrow.hidden = true
+            backLabel.hidden = true
             backButton.enabled = false
+            skipButton.hidden = true
         }
     }
     

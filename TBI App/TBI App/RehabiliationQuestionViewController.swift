@@ -67,10 +67,16 @@ class RehabiliationQuestionViewController: QuestionViewController {
         UIView.animateWithDuration(0.3) { () -> Void in
             self.optionsView.alpha = 1;
         }
+        let nextButton = (self.parentViewController?.parentViewController as! ViewController).nextButton
+        nextButton.enabled = false
+        nextButton.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
     
     @IBAction func cancel() {
         hideOptions()
+        let nextButton = (self.parentViewController?.parentViewController as! ViewController).nextButton
+        nextButton.enabled = true
+        nextButton.layer.borderColor = self.view.tintColor.CGColor
     }
     
     @IBAction func confirm() {
@@ -78,6 +84,10 @@ class RehabiliationQuestionViewController: QuestionViewController {
         selectedOptions.appendContentsOf(temporarySelectedOptions)
         temporarySelectedOptions.removeAll()
         hideOptions()
+        
+        let nextButton = (self.parentViewController?.parentViewController as! ViewController).nextButton
+        nextButton.enabled = true
+        nextButton.layer.borderColor = self.view.tintColor.CGColor
     }
 
     func hideOptions() {

@@ -26,7 +26,7 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
     @IBAction func answerQuestion(button: UIButton) {
         let answerText = button.titleLabel?.text
         if (answerText == NSLocalizedString("Other", comment: "")) {
-            
+            promptOtherDialog()
         } else {
             answer(answerText!)
         }
@@ -46,6 +46,8 @@ class TextStyleAnswerQuestionViewController: QuestionViewController {
                 self.answer(NSLocalizedString("Other", comment: ""))
             }
         }))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
     
     func answer(answerText: String) {
